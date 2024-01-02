@@ -1,0 +1,27 @@
+sudo: required
+language: node_js
+node_js:
+- '14'
+services:
+- docker
+- redis-server
+branches:
+  only:
+  - master
+before_install: ./scripts/beforeInstall.sh
+install:
+- npm i
+- export CHANGED=$(lerna changed --includeMergedTags)
+- echo ${CHANGED}
+- export CHANGED=${CHANGED:-$(lerna list)}
+- echo ${CHANGED}
+- lerna bootstrap
+script:
+- echo ${CHANGED}
+- |
+  if [ -z $CHANGED ]; 
+  then 
+    echo nothing changed
+  else 
+    ./scripts/runTestAndBuild.sh
+  fi
