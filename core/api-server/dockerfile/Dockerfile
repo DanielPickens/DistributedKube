@@ -6,7 +6,7 @@ RUN npm ci --production
 
 ARG BASE_PRIVATE_REGISTRY=""
 FROM ${BASE_PRIVATE_REGISTRY}distributedkube/base-node:v2.0.1-buster
-LABEL maintainer="danielpickens@gmail.com"
+LABEL maintainer="yehiyam@gmail.com"
 RUN mkdir /distributedkube
 COPY . /distributedkube/api-server
 COPY --from=install /distributedkube/api-server/node_modules /distributedkube/api-server/node_modules

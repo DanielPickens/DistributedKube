@@ -1,6 +1,6 @@
 const { ApolloServer } = require('apollo-server-express');
 const { makeExecutableSchema } = require('@graphql-tools/schema');
-const log = require('@hkube/logger').GetLogFromContanier();
+const log = require('@distributedkube/logger').GetLogFromContanier();
 const component = require('../../lib/consts/componentNames').GRAPHQL_SERVER;
 
 const _typeDefs = require('./graphql-schema');

@@ -1,7 +1,7 @@
 const Events = require('events');
-const Etcd = require('@hkube/etcd');
-const dbConnect = require('@hkube/db');
-const Logger = require('@hkube/logger');
+const Etcd = require('@distributedkube/etcd');
+const dbConnect = require('@distributedkube/db');
+const Logger = require('@distributedkube/logger');
 const pipelineStats = require('./get-pipeline-stats');
 let log;
 const ETCD_INTERVAL = 2000;

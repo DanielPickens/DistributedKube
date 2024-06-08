@@ -1,0 +1,32 @@
+# First build
+
+FROM  ${DOCKER_PULL_REGISTRY_USER}/node:18.1.0-buster AS wrapper
+COPY ./wrapper/package.json /distributedkube/algorithm-runner/
+WORKDIR /distributedkube/algorithm-runner/
+RUN npm --registry=http://artifacts-registry:8081/distributedkube/artifacts-registry/repository/npm install
+
+
+# Second build
+
+FROM ${baseImage} AS build
+LABEL maintainer="distributedkube.dev@gmail.com"
+WORKDIR /distributedkube/algorithm-runner/algorithm_unique_folder
+COPY ./algorithm_unique_folder/ /distributedkube/algorithm-runner/algorithm_unique_folder/
+COPY ./dockerfile /distributedkube/algorithm-runner/dockerfile
+ENV packagesRegistry=${packagesRegistry}
+ENV packagesToken=${packagesToken}
+ENV packagesAuth=${packagesAuth}
+ENV dependency_install_cmd=${dependency_install_cmd}
+RUN ../dockerfile/requirements.sh
+
+# - build
+FROM ${baseImage}
+RUN mkdir -p /distributedkube-logs
+COPY ./wrapper /distributedkube/algorithm-runner
+COPY --from=wrapper /distributedkube/algorithm-runner/ /distributedkube/algorithm-runner/
+COPY ./nodemon ./docker-entrypoint.sh /distributedkube/
+COPY --from=build /distributedkube/algorithm-runner/algorithm_unique_folder/ /distributedkube/algorithm-runner/algorithm_unique_folder/
+
+WORKDIR /distributedkube/algorithm-runner
+ENTRYPOINT ["/distributedkube/docker-entrypoint.sh"]
+CMD ["/bin/sh", "-c", "mkfifo /tmp/pipe; (tee -a /distributedkube-logs/stdout.log < /tmp/pipe & ) ; exec npm start > /tmp/pipe 2>&1"]

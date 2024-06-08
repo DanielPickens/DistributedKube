@@ -1,7 +1,7 @@
-const { Factory } = require('@hkube/redis-utils');
-const log = require('@hkube/logger').GetLogFromContainer();
+const { Factory } = require('@distributedkube/redis-utils');
+const log = require('@distributedkube/logger').GetLogFromContainer();
 const components = require('../../../lib/consts/componentNames');
-const LOGS_PREFIX = 'hkube:logs:all';
+const LOGS_PREFIX = 'distributedkube:logs:all';
 const component = components.GRAPHQL_QUERIES;
 
 class ErrorLogsQuerier {

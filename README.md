@@ -118,7 +118,7 @@ There are three ways to communicate with DistributedKube: **Dashboard**, **REST 
 DistributedKube exposes it's functionality with REST API.
 
 - [API Spec](http://distributedkube.io/spec/)
-- [Swagger-UI](http://petstore.swagger.io/?url=https://raw.githubusercontent.com/kube-HPC/api-server/master/api/rest-api/swagger.json) - locally `{yourDomain}/distributedkube/api-server/swagger-ui`
+- [Swagger-UI](http://petstore.swagger.io/?url=https://raw.githubusercontent.com/danielpickens/api-server/master/api/rest-api/swagger.json) - locally `{yourDomain}/distributedkube/api-server/swagger-ui`
 
 ### CLI
 
@@ -131,7 +131,7 @@ distributedkubectl [type] [command] [name]
 distributedkubectl --help
 ```
 
-Download `distributedkubectl` [latest version](https://github.com/kube-HPC/distributedkubectl/releases).
+Download `distributedkubectl` [latest version](https://github.com/danielpickens/distributedkubectl/releases).
 
 ```bash
 curl -Lo distributedkubectl https://github.com/danielpickensdistributedkubectl/releases/latest/download/distributedkubectl-linux \

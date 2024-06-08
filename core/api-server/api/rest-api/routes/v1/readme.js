@@ -1,4 +1,4 @@
-const RestServer = require('@hkube/rest-server');
+const RestServer = require('@distributedkube/rest-server');
 const multer = require('multer');
 const HttpStatus = require('http-status-codes');
 const readme = require('../../../../lib/service/readme');

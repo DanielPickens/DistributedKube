@@ -1,6 +1,6 @@
 const checkDiskSpace = require('check-disk-space').default;
-const log = require('@hkube/logger').GetLogFromContainer();
-const parse = require('@hkube/units-converter');
+const log = require('@distributedkube/logger').GetLogFromContainer();
+const parse = require('@distributedkube/units-converter');
 const DatabaseQuerier = require('./database-querier');
 const INTERVAL = 10000;
 const METRICS = ['cpu', 'mem', 'gpu'];

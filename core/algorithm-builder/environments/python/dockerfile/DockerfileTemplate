@@ -1,0 +1,13 @@
+FROM ${baseImage} 
+LABEL maintainer="distributedkube.dev@gmail.com"
+RUN mkdir -p /distributedkube-logs
+COPY wrapper/ /distributedkube/algorithm-runner/
+COPY algorithm_unique_folder/ /distributedkube/algorithm-runner/algorithm_unique_folder/
+COPY ./dockerfile/* /distributedkube/algorithm-runner/dockerfile/
+COPY ./nodemon ./docker-entrypoint.sh /distributedkube/
+WORKDIR /distributedkube/algorithm-runner
+RUN export dependency_install_cmd=${dependency_install_cmd} && ./dockerfile/requirements.sh ${packagesRegistry} ${packagesToken} 
+
+ENV PYTHONPATH=$PYTHONPATH:/distributedkube/algorithm-runner/algorithm_unique_folder
+ENTRYPOINT ["/distributedkube/docker-entrypoint.sh"]
+CMD ["/bin/sh", "-c", "mkfifo /tmp/pipe; (tee -a /distributedkube-logs/stdout.log < /tmp/pipe & ) ; exec python -u app.py > /tmp/pipe 2>&1"]

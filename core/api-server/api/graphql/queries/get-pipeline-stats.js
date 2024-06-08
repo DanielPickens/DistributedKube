@@ -1,4 +1,4 @@
-const log = require('@hkube/logger').GetLogFromContainer();
+const log = require('@distributedkube/logger').GetLogFromContainer();
 let lastRun = [];
 let active = false;
 const INTERVAL = 100000;

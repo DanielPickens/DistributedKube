@@ -1,4 +1,4 @@
-const storageManager = require('@hkube/storage-manager');
+const storageManager = require('@distributedkube/storage-manager');
 
 const _mapBoards = (boards, key, innerKey) => {
     return ((boards.length > 0) && boards.reduce((map, board) => {
@@ -21,11 +21,11 @@ const mapBoards = (boards) => {
 };
 
 const addHasMetricsToMap = async (nodeMap) => {
-    const pipelines = await storageManager.hkubeAlgoMetrics.listPipelines();
+    const pipelines = await storageManager.distributedkubeAlgoMetrics.listPipelines();
     await Promise.all(pipelines.map(async pipeline => {
         // eslint-disable-next-line no-param-reassign
         nodeMap[pipeline] = nodeMap[pipeline] || {};
-        const nodes = await storageManager.hkubeAlgoMetrics.listNodes(pipeline);
+        const nodes = await storageManager.distributedkubeAlgoMetrics.listNodes(pipeline);
         nodes.forEach(nodeName => {
             // eslint-disable-next-line no-param-reassign
             nodeMap[pipeline][nodeName] = nodeMap[pipeline][nodeName] || {};

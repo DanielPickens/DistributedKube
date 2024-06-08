@@ -1,6 +1,6 @@
 /* eslint-disable no-plusplus */
 /* eslint-disable default-case */
-const { pipelineStatuses } = require('@hkube/consts');
+const { pipelineStatuses } = require('@distributedkube/consts');
 const stateManager = require('../../lib/state/state-manager');
 const dbQueires = require('./queries/database-querier');
 const preferedQuerier = require('./queries/prefered-querier');

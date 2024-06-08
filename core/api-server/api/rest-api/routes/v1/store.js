@@ -1,4 +1,4 @@
-const RestServer = require('@hkube/rest-server');
+const RestServer = require('@distributedkube/rest-server');
 const fse = require('fs-extra');
 const multer = require('multer');
 const HttpStatus = require('http-status-codes');
@@ -42,11 +42,12 @@ const routes = (option) => {
     }); */
 
     router.post('/pipelines', async (req, res) => {
+        const allowOverwrite = req.query.overwrite;
         if (Array.isArray(req.body)) {
             const returnPipelineList = await Promise.all(
                 req.body.map(async (pipelineData) => {
                     // eslint-disable-next-line no-return-await
-                    return await pipelineStore.insertPipeline(pipelineData, false);
+                    return await pipelineStore.insertPipeline(pipelineData, false, allowOverwrite);
                 })
             );
             res.status(HttpStatus.CREATED).json(returnPipelineList);
@@ -84,18 +85,19 @@ const routes = (option) => {
         res.json(response);
     });
     router.post('/algorithms', async (req, res) => {
+        const allowOverwrite = req.query.overwrite;
         if (Array.isArray(req.body)) {
             const returnAlgoList = await Promise.all(
                 req.body.map(async (algorithmData) => {
                     // eslint-disable-next-line no-return-await
-                    return await algorithmStore.insertAlgorithm(algorithmData, false);
+                    return await algorithmStore.insertAlgorithm(algorithmData, false, allowOverwrite);
                 })
             );
             res.status(HttpStatus.CREATED).json(returnAlgoList);
         }
         else {
             // If req.body is not an array, process it as a single algorithm
-            const response = await algorithmStore.insertAlgorithm(req.body);
+            const response = await algorithmStore.insertAlgorithm(req.body, true, allowOverwrite);
             res.status(HttpStatus.CREATED).json(response);
         }
     });
@@ -127,7 +129,6 @@ const routes = (option) => {
         }
     });
     // algorithms
-
     return router;
 };
 

@@ -1,6 +1,6 @@
 {
     "name": "api-server",
-    "version": "2.7.4",
+    "version": "2.8.2",
     "description": "distributedkube Api Server",
     "main": "app.js",
     "dependencies": {
@@ -8,7 +8,7 @@
         "@distributedkube/config": "^2.0.11",
         "@distributedkube/consts": "^1.0.48",
         "@distributedkube/dag": "^2.1.25",
-        "@distributedkube/db": "^2.0.13",
+        "@distributedkube/db": "^2.0.15",
         "@distributedkube/elastic-client": "^1.0.4",
         "@distributedkube/etcd": "^5.1.10",
         "@distributedkube/healthchecks": "^1.0.2",

@@ -71,7 +71,7 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git clone "https://${{ secrets.GH_TOKEN }}@github.com/kube-HPC/helm.git" "$HOME/helm"
+          git clone "https://${{ secrets.GH_TOKEN }}@github.com/danielpickens/helm.git" "$HOME/helm"
           cd $HOME/helm
           git checkout ${{ github.event.deployment.ref }} || git checkout -b ${{ github.event.deployment.ref }}
           git status

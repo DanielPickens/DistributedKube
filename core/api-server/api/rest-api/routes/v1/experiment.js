@@ -1,4 +1,4 @@
-const RestServer = require('@hkube/rest-server');
+const RestServer = require('@distributedkube/rest-server');
 const Experiment = require('../../../../lib/service/experiment');
 
 const routes = () => {

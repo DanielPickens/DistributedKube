@@ -1,4 +1,4 @@
-const RestServer = require('@hkube/rest-server');
+const RestServer = require('@distributedkube/rest-server');
 const DatabaseQuerier = require('../../../graphql/queries/database-querier');
 
 const taskExecResourceName = 'task-executor';

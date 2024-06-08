@@ -1,4 +1,4 @@
-const RestServer = require('@hkube/rest-server');
+const RestServer = require('@distributedkube/rest-server');
 const graph = require('../../../../lib/service/graph');
 const methods = require('../../middlewares/methods');
 

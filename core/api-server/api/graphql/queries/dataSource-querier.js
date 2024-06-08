@@ -1,5 +1,5 @@
 const { default: axios } = require('axios');
-const log = require('@hkube/logger').GetLogFromContainer();
+const log = require('@distributedkube/logger').GetLogFromContainer();
 const component = require('../../../lib/consts/componentNames').GRAPHQL_SERVER;
 class DataSourceQuerier {
     init(config) {
