@@ -1,0 +1,57 @@
+{
+  "name": "pipeline-driver",
+  "version": "2.8.0",
+  "description": "pipeline execution based on DAG",
+  "main": "app.js",
+  "directories": {
+    "lib": "lib",
+    "tests": "tests"
+  },
+  "dependencies": {
+    "@distributedkube/config": "^2.0.11",
+    "@distributedkube/consts": "^1.0.50",
+    "@distributedkube/dag": "^2.2.2",
+    "@distributedkube/db": "^2.0.14",
+    "@distributedkube/etcd": "^5.1.9",
+    "@distributedkube/logger": "^2.0.2",
+    "@distributedkube/metrics": "^1.0.43",
+    "@distributedkube/parsers": "^2.1.9",
+    "@distributedkube/producer-consumer": "^1.0.50",
+    "@distributedkube/redis-utils": "^1.0.3",
+    "@distributedkube/stats": "^1.0.1",
+    "@distributedkube/storage-manager": "^2.1.1",
+    "async.queue": "^0.5.2",
+    "clone": "^2.1.2",
+    "flat": "^5.0.0",
+    "lodash.groupby": "^4.6.0",
+    "lodash.isequal": "^4.5.0",
+    "lodash.throttle": "^4.1.1",
+    "moment": "^2.29.1",
+    "mongodb": "^3.6.4",
+    "object-path": "^0.11.4"
+  },
+  "devDependencies": {
+    "@distributedkube/uid": "^1.0.4",
+    "chai": "^4.2.0",
+    "chai-as-promised": "^7.1.1",
+    "coveralls": "^3.0.11",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-plugin-chai-friendly": "^0.5.0",
+    "eslint-plugin-import": "^2.20.2",
+    "mocha": "^7.1.1",
+    "nyc": "^15.0.1",
+    "sinon": "^9.0.1"
+  },
+  "scripts": {
+    "lint": "./node_modules/eslint/bin/eslint.js .",
+    "pretest": "npm run lint",
+    "test": "STATUS_DELAY_MS=1 NODE_ENV=test ./node_modules/mocha/bin/_mocha tests --timeout=10000 --colors --recursive --exit",
+    "test:cov": "NODE_ENV=test ./node_modules/nyc/bin/nyc.js --exclude=bootstrap.js --reporter=html --reporter=text --reporter=lcov mocha tests --timeout=10000 --colors --recursive --exit",
+    "coverage": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
+    "start": "node app",
+    "build": "./dockerfile/build.sh pipeline-driver"
+  },
+  "author": "distributedkube",
+  "license": "MIT"
+}

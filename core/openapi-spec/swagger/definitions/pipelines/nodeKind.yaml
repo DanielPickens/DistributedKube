@@ -1,0 +1,10 @@
+type: string
+default: algorithm
+enum:
+  - algorithm
+  - pipeline
+  - debug
+  - dataSource
+  - gateway
+  - output
+  - hyperparamsTuner

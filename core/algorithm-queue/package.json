@@ -1,0 +1,48 @@
+{
+  "name": "algorithm-queue",
+  "version": "2.8.1",
+  "description": "",
+  "main": "app.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "lint": "./node_modules/eslint/bin/eslint.js .",
+    "test": "NODE_ENV=test ./node_modules/mocha/bin/_mocha tests --timeout=10000 --colors --recursive --exit",
+    "test:cov": "NODE_ENV=test ./node_modules/nyc/bin/nyc.js --reporter=html --reporter=text --reporter=lcov mocha tests --colors --recursive --exit",
+    "coverage": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
+    "start": "node app",
+    "build": "./dockerfile/build.sh algorithm-queue"
+  },
+  "author": "distributedkube",
+  "license": "MIT",
+  "dependencies": {
+    "@distributedkube/config": "^2.0.11",
+    "@distributedkube/consts": "^1.0.31",
+    "@distributedkube/db": "^1.0.34",
+    "@distributedkube/etcd": "^5.1.10",
+    "@distributedkube/logger": "^2.0.2",
+    "@distributedkube/metrics": "^1.0.42",
+    "@distributedkube/producer-consumer": "^1.0.52",
+    "@distributedkube/redis-utils": "^1.0.3",
+    "@distributedkube/storage-manager": "^2.1.1",
+    "@distributedkube/uid": "^1.0.4",
+    "lodash.isequal": "^4.5.0",
+    "lodash.orderby": "^4.6.0",
+    "lodash.remove": "^4.7.0",
+    "performance-now": "^2.1.0"
+  },
+  "devDependencies": {
+    "await-delay": "^1.0.0",
+    "await-done": "^1.0.10",
+    "chai": "^4.2.0",
+    "eslint": "^6.7.2",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-chai-friendly": "^0.5.0",
+    "eslint-plugin-import": "^2.19.1",
+    "mocha": "^6.2.2",
+    "mockery": "^2.1.0",
+    "nyc": "^14.1.1",
+    "sinon": "^7.5.0"
+  }
+}

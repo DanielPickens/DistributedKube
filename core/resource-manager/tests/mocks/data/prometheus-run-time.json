@@ -1,0 +1,2070 @@
+{
+  "status": "success",
+  "data": {
+    "resultType": "matrix",
+    "result": [
+      {
+        "metric": {
+          "__name__": "algorithm_runtime_summary",
+          "algorithmName": "black-alg",
+          "app": "worker",
+          "core": "true",
+          "group": "distributedkube",
+          "instance": "10.233.65.196:3001",
+          "job": "kubernetes-service-endpoints",
+          "kubernetes_name": "worker",
+          "kubernetes_namespace": "default",
+          "pipelineName": "simple",
+          "quantile": "0.5",
+          "status": "succeed"
+        },
+        "values": [
+          [
+            1531223472.901,
+            "200000"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "algorithm_runtime_summary",
+          "algorithmName": "black-alg",
+          "app": "worker",
+          "core": "true",
+          "group": "distributedkube",
+          "instance": "10.233.68.206:3001",
+          "job": "kubernetes-service-endpoints",
+          "kubernetes_name": "worker",
+          "kubernetes_namespace": "default",
+          "pipelineName": "simple",
+          "quantile": "0.5",
+          "status": "succeed"
+        },
+        "values": [
+          [
+            1531140672.901,
+            "1143"
+          ],
+          [
+            1531141017.901,
+            "1143"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "algorithm_runtime_summary",
+          "algorithmName": "cpu-load",
+          "app": "worker",
+          "core": "true",
+          "group": "distributedkube",
+          "instance": "10.233.66.187:3001",
+          "job": "kubernetes-service-endpoints",
+          "kubernetes_name": "worker",
+          "kubernetes_namespace": "default",
+          "pipelineName": "raw-cpu-load-1-cec490310d",
+          "quantile": "0.5",
+          "status": "undefined"
+        },
+        "values": [
+          [
+            1531207602.901,
+            "24"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "algorithm_runtime_summary",
+          "algorithmName": "cpu-load",
+          "app": "worker",
+          "core": "true",
+          "group": "distributedkube",
+          "instance": "10.233.73.159:3001",
+          "job": "kubernetes-service-endpoints",
+          "kubernetes_name": "worker",
+          "kubernetes_namespace": "default",
+          "pipelineName": "raw-cpu-load-1-74cc859dfc",
+          "quantile": "0.5",
+          "status": "succeed"
+        },
+        "values": [
+          [
+            1531207602.901,
+            "37591"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "algorithm_runtime_summary",
+          "algorithmName": "eval-alg",
+          "app": "worker",
+          "core": "true",
+          "group": "distributedkube",
+          "instance": "10.233.65.77:3001",
+          "job": "kubernetes-service-endpoints",
+          "kubernetes_name": "worker",
+          "kubernetes_namespace": "default",
+          "pipelineName": "evalwait",
+          "quantile": "0.5",
+          "status": "succeed"
+        },
+        "values": [
+          [
+            1531141707.901,
+            "10134"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "algorithm_runtime_summary",
+          "algorithmName": "eval-alg",
+          "app": "worker",
+          "core": "true",
+          "group": "distributedkube",
+          "instance": "10.233.65.78:3001",
+          "job": "kubernetes-service-endpoints",
+          "kubernetes_name": "worker",
+          "kubernetes_namespace": "default",
+          "pipelineName": "evalwait",
+          "quantile": "0.5",
+          "status": "succeed"
+        },
+        "values": [
+          [
+            1531141707.901,
+            "10108.5"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "algorithm_runtime_summary",
+          "algorithmName": "eval-alg",
+          "app": "worker",
+          "core": "true",
+          "group": "distributedkube",
+          "instance": "10.233.65.79:3001",
+          "job": "kubernetes-service-endpoints",
+          "kubernetes_name": "worker",
+          "kubernetes_namespace": "default",
+          "pipelineName": "evalwait",
+          "quantile": "0.5",
+          "status": "succeed"
+        },
+        "values": [
+          [
+            1531141707.901,
+            "10215"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "algorithm_runtime_summary",
+          "algorithmName": "eval-alg",
+          "app": "worker",
+          "core": "true",
+          "group": "distributedkube",
+          "instance": "10.233.65.79:3001",
+          "job": "kubernetes-service-endpoints",
+          "kubernetes_name": "worker",
+          "kubernetes_namespace": "default",
+          "pipelineName": "evalwait",
+          "quantile": "0.5",
+          "status": "undefined"
+        },
+        "values": [
+          [
+            1531141707.901,
+            "74"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "algorithm_runtime_summary",
+          "algorithmName": "eval-alg",
+          "app": "worker",
+          "core": "true",
+          "group": "distributedkube",
+          "instance": "10.233.65.80:3001",
+          "job": "kubernetes-service-endpoints",
+          "kubernetes_name": "worker",
+          "kubernetes_namespace": "default",
+          "pipelineName": "evalwait",
+          "quantile": "0.5",
+          "status": "succeed"
+        },
+        "values": [
+          [
+            1531141707.901,
+            "10164"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "algorithm_runtime_summary",
+          "algorithmName": "eval-alg",
+          "app": "worker",
+          "core": "true",
+          "group": "distributedkube",
+          "instance": "10.233.65.81:3001",
+          "job": "kubernetes-service-endpoints",
+          "kubernetes_name": "worker",
+          "kubernetes_namespace": "default",
+          "pipelineName": "evalwait",
+          "quantile": "0.5",
+          "status": "succeed"
+        },
+        "values": [
+          [
+            1531141707.901,
+            "10152"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "algorithm_runtime_summary",
+          "algorithmName": "eval-alg",
+          "app": "worker",
+          "core": "true",
+          "group": "distributedkube",
+          "instance": "10.233.65.81:3001",
+          "job": "kubernetes-service-endpoints",
+          "kubernetes_name": "worker",
+          "kubernetes_namespace": "default",
+          "pipelineName": "evalwait",
+          "quantile": "0.5",
+          "status": "undefined"
+        },
+        "values": [
+          [
+            1531141707.901,
+            "111"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "algorithm_runtime_summary",
+          "algorithmName": "eval-alg",
+          "app": "worker",
+          "core": "true",
+          "group": "distributedkube",
+          "instance": "10.233.65.87:3001",
+          "job": "kubernetes-service-endpoints",
+          "kubernetes_name": "worker",
+          "kubernetes_namespace": "default",
+          "pipelineName": "evalwait",
+          "quantile": "0.5",
+          "status": "succeed"
+        },
+        "values": [
+          [
+            1531142052.901,
+            "10410"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "algorithm_runtime_summary",
+          "algorithmName": "eval-alg",
+          "app": "worker",
+          "core": "true",
+          "group": "distributedkube",
+          "instance": "10.233.65.89:3001",
+          "job": "kubernetes-service-endpoints",
+          "kubernetes_name": "worker",
+          "kubernetes_namespace": "default",
+          "pipelineName": "evalwait",
+          "quantile": "0.5",
+          "status": "succeed"
+        },
+        "values": [
+          [
+            1531142052.901,
+            "10351"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "algorithm_runtime_summary",
+          "algorithmName": "eval-alg",
+          "app": "worker",
+          "core": "true",
+          "group": "distributedkube",
+          "instance": "10.233.66.171:3001",
+          "job": "kubernetes-service-endpoints",
+          "kubernetes_name": "worker",
+          "kubernetes_namespace": "default",
+          "pipelineName": "evalcron1minutes",
+          "quantile": "0.5",
+          "status": "succeed"
+        },
+        "values": [
+          [
+            1531137222.901,
+            "10265.5"
+          ],
+          [
+            1531137567.901,
+            "10265.5"
+          ],
+          [
+            1531137912.901,
+            "10265.5"
+          ],
+          [
+            1531138257.901,
+            "10265.5"
+          ],
+          [
+            1531138602.901,
+            "10265.5"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "algorithm_runtime_summary",
+          "algorithmName": "eval-alg",
+          "app": "worker",
+          "core": "true",
+          "group": "distributedkube",
+          "instance": "10.233.66.171:3001",
+          "job": "kubernetes-service-endpoints",
+          "kubernetes_name": "worker",
+          "kubernetes_namespace": "default",
+          "pipelineName": "evalwait",
+          "quantile": "0.5",
+          "status": "succeed"
+        },
+        "values": [
+          [
+            1531137222.901,
+            "10343.5"
+          ],
+          [
+            1531137567.901,
+            "10343.5"
+          ],
+          [
+            1531137912.901,
+            "10343.5"
+          ],
+          [
+            1531138257.901,
+            "10343.5"
+          ],
+          [
+            1531138602.901,
+            "10343.5"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "algorithm_runtime_summary",
+          "algorithmName": "eval-alg",
+          "app": "worker",
+          "core": "true",
+          "group": "distributedkube",
+          "instance": "10.233.66.171:3001",
+          "job": "kubernetes-service-endpoints",
+          "kubernetes_name": "worker",
+          "kubernetes_namespace": "default",
+          "pipelineName": "noncron",
+          "quantile": "0.5",
+          "status": "succeed"
+        },
+        "values": [
+          [
+            1531137222.901,
+            "79"
+          ],
+          [
+            1531137567.901,
+            "79"
+          ],
+          [
+            1531137912.901,
+            "79"
+          ],
+          [
+            1531138257.901,
+            "79"
+          ],
+          [
+            1531138602.901,
+            "79"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "algorithm_runtime_summary",
+          "algorithmName": "eval-alg",
+          "app": "worker",
+          "core": "true",
+          "group": "distributedkube",
+          "instance": "10.233.66.63:3001",
+          "job": "kubernetes-service-endpoints",
+          "kubernetes_name": "worker",
+          "kubernetes_namespace": "default",
+          "pipelineName": "evalwait",
+          "quantile": "0.5",
+          "status": "succeed"
+        },
+        "values": [
+          [
+            1531141707.901,
+            "10174.5"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "algorithm_runtime_summary",
+          "algorithmName": "eval-alg",
+          "app": "worker",
+          "core": "true",
+          "group": "distributedkube",
+          "instance": "10.233.66.64:3001",
+          "job": "kubernetes-service-endpoints",
+          "kubernetes_name": "worker",
+          "kubernetes_namespace": "default",
+          "pipelineName": "evalwait",
+          "quantile": "0.5",
+          "status": "succeed"
+        },
+        "values": [
+          [
+            1531141707.901,
+            "10230"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "algorithm_runtime_summary",
+          "algorithmName": "eval-alg",
+          "app": "worker",
+          "core": "true",
+          "group": "distributedkube",
+          "instance": "10.233.66.65:3001",
+          "job": "kubernetes-service-endpoints",
+          "kubernetes_name": "worker",
+          "kubernetes_namespace": "default",
+          "pipelineName": "evalwait",
+          "quantile": "0.5",
+          "status": "succeed"
+        },
+        "values": [
+          [
+            1531141707.901,
+            "10161"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "algorithm_runtime_summary",
+          "algorithmName": "eval-alg",
+          "app": "worker",
+          "core": "true",
+          "group": "distributedkube",
+          "instance": "10.233.66.66:3001",
+          "job": "kubernetes-service-endpoints",
+          "kubernetes_name": "worker",
+          "kubernetes_namespace": "default",
+          "pipelineName": "evalwait",
+          "quantile": "0.5",
+          "status": "succeed"
+        },
+        "values": [
+          [
+            1531141707.901,
+            "10131"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "algorithm_runtime_summary",
+          "algorithmName": "eval-alg",
+          "app": "worker",
+          "core": "true",
+          "group": "distributedkube",
+          "instance": "10.233.66.67:3001",
+          "job": "kubernetes-service-endpoints",
+          "kubernetes_name": "worker",
+          "kubernetes_namespace": "default",
+          "pipelineName": "evalwait",
+          "quantile": "0.5",
+          "status": "succeed"
+        },
+        "values": [
+          [
+            1531141707.901,
+            "10147"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "algorithm_runtime_summary",
+          "algorithmName": "eval-alg",
+          "app": "worker",
+          "core": "true",
+          "group": "distributedkube",
+          "instance": "10.233.66.69:3001",
+          "job": "kubernetes-service-endpoints",
+          "kubernetes_name": "worker",
+          "kubernetes_namespace": "default",
+          "pipelineName": "evalwait",
+          "quantile": "0.5",
+          "status": "succeed"
+        },
+        "values": [
+          [
+            1531142052.901,
+            "10208"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "algorithm_runtime_summary",
+          "algorithmName": "eval-alg",
+          "app": "worker",
+          "core": "true",
+          "group": "distributedkube",
+          "instance": "10.233.67.33:3001",
+          "job": "kubernetes-service-endpoints",
+          "kubernetes_name": "worker",
+          "kubernetes_namespace": "default",
+          "pipelineName": "evalwait",
+          "quantile": "0.5",
+          "status": "succeed"
+        },
+        "values": [
+          [
+            1531141707.901,
+            "10129"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "algorithm_runtime_summary",
+          "algorithmName": "eval-alg",
+          "app": "worker",
+          "core": "true",
+          "group": "distributedkube",
+          "instance": "10.233.67.34:3001",
+          "job": "kubernetes-service-endpoints",
+          "kubernetes_name": "worker",
+          "kubernetes_namespace": "default",
+          "pipelineName": "evalwait",
+          "quantile": "0.5",
+          "status": "succeed"
+        },
+        "values": [
+          [
+            1531141707.901,
+            "10199.5"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "algorithm_runtime_summary",
+          "algorithmName": "eval-alg",
+          "app": "worker",
+          "core": "true",
+          "group": "distributedkube",
+          "instance": "10.233.67.35:3001",
+          "job": "kubernetes-service-endpoints",
+          "kubernetes_name": "worker",
+          "kubernetes_namespace": "default",
+          "pipelineName": "evalwait",
+          "quantile": "0.5",
+          "status": "succeed"
+        },
+        "values": [
+          [
+            1531141707.901,
+            "10210"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "algorithm_runtime_summary",
+          "algorithmName": "eval-alg",
+          "app": "worker",
+          "core": "true",
+          "group": "distributedkube",
+          "instance": "10.233.67.35:3001",
+          "job": "kubernetes-service-endpoints",
+          "kubernetes_name": "worker",
+          "kubernetes_namespace": "default",
+          "pipelineName": "evalwait",
+          "quantile": "0.5",
+          "status": "undefined"
+        },
+        "values": [
+          [
+            1531141707.901,
+            "150"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "algorithm_runtime_summary",
+          "algorithmName": "eval-alg",
+          "app": "worker",
+          "core": "true",
+          "group": "distributedkube",
+          "instance": "10.233.67.39:3001",
+          "job": "kubernetes-service-endpoints",
+          "kubernetes_name": "worker",
+          "kubernetes_namespace": "default",
+          "pipelineName": "evalwait",
+          "quantile": "0.5",
+          "status": "succeed"
+        },
+        "values": [
+          [
+            1531142052.901,
+            "10205"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "algorithm_runtime_summary",
+          "algorithmName": "eval-alg",
+          "app": "worker",
+          "core": "true",
+          "group": "distributedkube",
+          "instance": "10.233.67.41:3001",
+          "job": "kubernetes-service-endpoints",
+          "kubernetes_name": "worker",
+          "kubernetes_namespace": "default",
+          "pipelineName": "evalwait",
+          "quantile": "0.5",
+          "status": "succeed"
+        },
+        "values": [
+          [
+            1531142052.901,
+            "10398"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "algorithm_runtime_summary",
+          "algorithmName": "eval-alg",
+          "app": "worker",
+          "core": "true",
+          "group": "distributedkube",
+          "instance": "10.233.68.207:3001",
+          "job": "kubernetes-service-endpoints",
+          "kubernetes_name": "worker",
+          "kubernetes_namespace": "default",
+          "pipelineName": "evalwait",
+          "quantile": "0.5",
+          "status": "succeed"
+        },
+        "values": [
+          [
+            1531141707.901,
+            "10141.5"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "algorithm_runtime_summary",
+          "algorithmName": "eval-alg",
+          "app": "worker",
+          "core": "true",
+          "group": "distributedkube",
+          "instance": "10.233.68.208:3001",
+          "job": "kubernetes-service-endpoints",
+          "kubernetes_name": "worker",
+          "kubernetes_namespace": "default",
+          "pipelineName": "evalwait",
+          "quantile": "0.5",
+          "status": "succeed"
+        },
+        "values": [
+          [
+            1531141707.901,
+            "10137"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "algorithm_runtime_summary",
+          "algorithmName": "eval-alg",
+          "app": "worker",
+          "core": "true",
+          "group": "distributedkube",
+          "instance": "10.233.68.209:3001",
+          "job": "kubernetes-service-endpoints",
+          "kubernetes_name": "worker",
+          "kubernetes_namespace": "default",
+          "pipelineName": "evalwait",
+          "quantile": "0.5",
+          "status": "succeed"
+        },
+        "values": [
+          [
+            1531141707.901,
+            "10141"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "algorithm_runtime_summary",
+          "algorithmName": "eval-alg",
+          "app": "worker",
+          "core": "true",
+          "group": "distributedkube",
+          "instance": "10.233.68.209:3001",
+          "job": "kubernetes-service-endpoints",
+          "kubernetes_name": "worker",
+          "kubernetes_namespace": "default",
+          "pipelineName": "evalwait",
+          "quantile": "0.5",
+          "status": "undefined"
+        },
+        "values": [
+          [
+            1531141707.901,
+            "97"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "algorithm_runtime_summary",
+          "algorithmName": "eval-alg",
+          "app": "worker",
+          "core": "true",
+          "group": "distributedkube",
+          "instance": "10.233.68.210:3001",
+          "job": "kubernetes-service-endpoints",
+          "kubernetes_name": "worker",
+          "kubernetes_namespace": "default",
+          "pipelineName": "evalwait",
+          "quantile": "0.5",
+          "status": "succeed"
+        },
+        "values": [
+          [
+            1531141707.901,
+            "10164"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "algorithm_runtime_summary",
+          "algorithmName": "eval-alg",
+          "app": "worker",
+          "core": "true",
+          "group": "distributedkube",
+          "instance": "10.233.68.210:3001",
+          "job": "kubernetes-service-endpoints",
+          "kubernetes_name": "worker",
+          "kubernetes_namespace": "default",
+          "pipelineName": "evalwait",
+          "quantile": "0.5",
+          "status": "undefined"
+        },
+        "values": [
+          [
+            1531141707.901,
+            "109"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "algorithm_runtime_summary",
+          "algorithmName": "eval-alg",
+          "app": "worker",
+          "core": "true",
+          "group": "distributedkube",
+          "instance": "10.233.68.215:3001",
+          "job": "kubernetes-service-endpoints",
+          "kubernetes_name": "worker",
+          "kubernetes_namespace": "default",
+          "pipelineName": "evalwait",
+          "quantile": "0.5",
+          "status": "succeed"
+        },
+        "values": [
+          [
+            1531142052.901,
+            "10403"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "algorithm_runtime_summary",
+          "algorithmName": "eval-alg",
+          "app": "worker",
+          "core": "true",
+          "group": "distributedkube",
+          "instance": "10.233.68.216:3001",
+          "job": "kubernetes-service-endpoints",
+          "kubernetes_name": "worker",
+          "kubernetes_namespace": "default",
+          "pipelineName": "evalwait",
+          "quantile": "0.5",
+          "status": "succeed"
+        },
+        "values": [
+          [
+            1531142052.901,
+            "10483"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "algorithm_runtime_summary",
+          "algorithmName": "eval-alg",
+          "app": "worker",
+          "core": "true",
+          "group": "distributedkube",
+          "instance": "10.233.69.119:3001",
+          "job": "kubernetes-service-endpoints",
+          "kubernetes_name": "worker",
+          "kubernetes_namespace": "default",
+          "pipelineName": "evalwait",
+          "quantile": "0.5",
+          "status": "succeed"
+        },
+        "values": [
+          [
+            1531141707.901,
+            "10134"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "algorithm_runtime_summary",
+          "algorithmName": "eval-alg",
+          "app": "worker",
+          "core": "true",
+          "group": "distributedkube",
+          "instance": "10.233.69.119:3001",
+          "job": "kubernetes-service-endpoints",
+          "kubernetes_name": "worker",
+          "kubernetes_namespace": "default",
+          "pipelineName": "evalwait",
+          "quantile": "0.5",
+          "status": "undefined"
+        },
+        "values": [
+          [
+            1531141707.901,
+            "48"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "algorithm_runtime_summary",
+          "algorithmName": "eval-alg",
+          "app": "worker",
+          "core": "true",
+          "group": "distributedkube",
+          "instance": "10.233.69.120:3001",
+          "job": "kubernetes-service-endpoints",
+          "kubernetes_name": "worker",
+          "kubernetes_namespace": "default",
+          "pipelineName": "evalwait",
+          "quantile": "0.5",
+          "status": "succeed"
+        },
+        "values": [
+          [
+            1531141707.901,
+            "10165"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "algorithm_runtime_summary",
+          "algorithmName": "eval-alg",
+          "app": "worker",
+          "core": "true",
+          "group": "distributedkube",
+          "instance": "10.233.69.121:3001",
+          "job": "kubernetes-service-endpoints",
+          "kubernetes_name": "worker",
+          "kubernetes_namespace": "default",
+          "pipelineName": "evalwait",
+          "quantile": "0.5",
+          "status": "succeed"
+        },
+        "values": [
+          [
+            1531141707.901,
+            "10159"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "algorithm_runtime_summary",
+          "algorithmName": "eval-alg",
+          "app": "worker",
+          "core": "true",
+          "group": "distributedkube",
+          "instance": "10.233.69.122:3001",
+          "job": "kubernetes-service-endpoints",
+          "kubernetes_name": "worker",
+          "kubernetes_namespace": "default",
+          "pipelineName": "evalwait",
+          "quantile": "0.5",
+          "status": "succeed"
+        },
+        "values": [
+          [
+            1531141707.901,
+            "10178.5"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "algorithm_runtime_summary",
+          "algorithmName": "eval-alg",
+          "app": "worker",
+          "core": "true",
+          "group": "distributedkube",
+          "instance": "10.233.69.123:3001",
+          "job": "kubernetes-service-endpoints",
+          "kubernetes_name": "worker",
+          "kubernetes_namespace": "default",
+          "pipelineName": "evalwait",
+          "quantile": "0.5",
+          "status": "succeed"
+        },
+        "values": [
+          [
+            1531141707.901,
+            "10161"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "algorithm_runtime_summary",
+          "algorithmName": "eval-alg",
+          "app": "worker",
+          "core": "true",
+          "group": "distributedkube",
+          "instance": "10.233.69.130:3001",
+          "job": "kubernetes-service-endpoints",
+          "kubernetes_name": "worker",
+          "kubernetes_namespace": "default",
+          "pipelineName": "evalwait",
+          "quantile": "0.5",
+          "status": "succeed"
+        },
+        "values": [
+          [
+            1531142052.901,
+            "10223"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "algorithm_runtime_summary",
+          "algorithmName": "eval-alg",
+          "app": "worker",
+          "core": "true",
+          "group": "distributedkube",
+          "instance": "10.233.69.131:3001",
+          "job": "kubernetes-service-endpoints",
+          "kubernetes_name": "worker",
+          "kubernetes_namespace": "default",
+          "pipelineName": "evalwait",
+          "quantile": "0.5",
+          "status": "succeed"
+        },
+        "values": [
+          [
+            1531142052.901,
+            "10243"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "algorithm_runtime_summary",
+          "algorithmName": "eval-alg",
+          "app": "worker",
+          "core": "true",
+          "group": "distributedkube",
+          "instance": "10.233.69.133:3001",
+          "job": "kubernetes-service-endpoints",
+          "kubernetes_name": "worker",
+          "kubernetes_namespace": "default",
+          "pipelineName": "evalwait",
+          "quantile": "0.5",
+          "status": "succeed"
+        },
+        "values": [
+          [
+            1531142052.901,
+            "10367"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "algorithm_runtime_summary",
+          "algorithmName": "eval-alg",
+          "app": "worker",
+          "core": "true",
+          "group": "distributedkube",
+          "instance": "10.233.70.179:3001",
+          "job": "kubernetes-service-endpoints",
+          "kubernetes_name": "worker",
+          "kubernetes_namespace": "default",
+          "pipelineName": "evalwait",
+          "quantile": "0.5",
+          "status": "succeed"
+        },
+        "values": [
+          [
+            1531141707.901,
+            "10239"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "algorithm_runtime_summary",
+          "algorithmName": "eval-alg",
+          "app": "worker",
+          "core": "true",
+          "group": "distributedkube",
+          "instance": "10.233.70.180:3001",
+          "job": "kubernetes-service-endpoints",
+          "kubernetes_name": "worker",
+          "kubernetes_namespace": "default",
+          "pipelineName": "evalwait",
+          "quantile": "0.5",
+          "status": "succeed"
+        },
+        "values": [
+          [
+            1531141707.901,
+            "10197"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "algorithm_runtime_summary",
+          "algorithmName": "eval-alg",
+          "app": "worker",
+          "core": "true",
+          "group": "distributedkube",
+          "instance": "10.233.70.180:3001",
+          "job": "kubernetes-service-endpoints",
+          "kubernetes_name": "worker",
+          "kubernetes_namespace": "default",
+          "pipelineName": "evalwait",
+          "quantile": "0.5",
+          "status": "undefined"
+        },
+        "values": [
+          [
+            1531141707.901,
+            "114"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "algorithm_runtime_summary",
+          "algorithmName": "eval-alg",
+          "app": "worker",
+          "core": "true",
+          "group": "distributedkube",
+          "instance": "10.233.70.181:3001",
+          "job": "kubernetes-service-endpoints",
+          "kubernetes_name": "worker",
+          "kubernetes_namespace": "default",
+          "pipelineName": "evalwait",
+          "quantile": "0.5",
+          "status": "succeed"
+        },
+        "values": [
+          [
+            1531141707.901,
+            "10264"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "algorithm_runtime_summary",
+          "algorithmName": "eval-alg",
+          "app": "worker",
+          "core": "true",
+          "group": "distributedkube",
+          "instance": "10.233.70.186:3001",
+          "job": "kubernetes-service-endpoints",
+          "kubernetes_name": "worker",
+          "kubernetes_namespace": "default",
+          "pipelineName": "evalwait",
+          "quantile": "0.5",
+          "status": "succeed"
+        },
+        "values": [
+          [
+            1531142052.901,
+            "10370.5"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "algorithm_runtime_summary",
+          "algorithmName": "eval-alg",
+          "app": "worker",
+          "core": "true",
+          "group": "distributedkube",
+          "instance": "10.233.70.188:3001",
+          "job": "kubernetes-service-endpoints",
+          "kubernetes_name": "worker",
+          "kubernetes_namespace": "default",
+          "pipelineName": "evalwait",
+          "quantile": "0.5",
+          "status": "succeed"
+        },
+        "values": [
+          [
+            1531142052.901,
+            "10435.5"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "algorithm_runtime_summary",
+          "algorithmName": "eval-alg",
+          "app": "worker",
+          "core": "true",
+          "group": "distributedkube",
+          "instance": "10.233.73.63:3001",
+          "job": "kubernetes-service-endpoints",
+          "kubernetes_name": "worker",
+          "kubernetes_namespace": "default",
+          "pipelineName": "addmult",
+          "quantile": "0.5",
+          "status": "succeed"
+        },
+        "values": [
+          [
+            1531141707.901,
+            "113.5"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "algorithm_runtime_summary",
+          "algorithmName": "eval-alg",
+          "app": "worker",
+          "core": "true",
+          "group": "distributedkube",
+          "instance": "10.233.73.63:3001",
+          "job": "kubernetes-service-endpoints",
+          "kubernetes_name": "worker",
+          "kubernetes_namespace": "default",
+          "pipelineName": "evalwait",
+          "quantile": "0.5",
+          "status": "succeed"
+        },
+        "values": [
+          [
+            1531141707.901,
+            "10182"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "algorithm_runtime_summary",
+          "algorithmName": "eval-alg",
+          "app": "worker",
+          "core": "true",
+          "group": "distributedkube",
+          "instance": "10.233.73.64:3001",
+          "job": "kubernetes-service-endpoints",
+          "kubernetes_name": "worker",
+          "kubernetes_namespace": "default",
+          "pipelineName": "evalwait",
+          "quantile": "0.5",
+          "status": "succeed"
+        },
+        "values": [
+          [
+            1531141707.901,
+            "10135"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "algorithm_runtime_summary",
+          "algorithmName": "eval-alg",
+          "app": "worker",
+          "core": "true",
+          "group": "distributedkube",
+          "instance": "10.233.73.65:3001",
+          "job": "kubernetes-service-endpoints",
+          "kubernetes_name": "worker",
+          "kubernetes_namespace": "default",
+          "pipelineName": "evalwait",
+          "quantile": "0.5",
+          "status": "succeed"
+        },
+        "values": [
+          [
+            1531141707.901,
+            "10150"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "algorithm_runtime_summary",
+          "algorithmName": "eval-alg",
+          "app": "worker",
+          "core": "true",
+          "group": "distributedkube",
+          "instance": "10.233.73.66:3001",
+          "job": "kubernetes-service-endpoints",
+          "kubernetes_name": "worker",
+          "kubernetes_namespace": "default",
+          "pipelineName": "evalwait",
+          "quantile": "0.5",
+          "status": "succeed"
+        },
+        "values": [
+          [
+            1531141707.901,
+            "10096"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "algorithm_runtime_summary",
+          "algorithmName": "eval-alg",
+          "app": "worker",
+          "core": "true",
+          "group": "distributedkube",
+          "instance": "10.233.73.66:3001",
+          "job": "kubernetes-service-endpoints",
+          "kubernetes_name": "worker",
+          "kubernetes_namespace": "default",
+          "pipelineName": "evalwait",
+          "quantile": "0.5",
+          "status": "undefined"
+        },
+        "values": [
+          [
+            1531141707.901,
+            "45.5"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "algorithm_runtime_summary",
+          "algorithmName": "eval-alg",
+          "app": "worker",
+          "core": "true",
+          "group": "distributedkube",
+          "instance": "10.233.73.67:3001",
+          "job": "kubernetes-service-endpoints",
+          "kubernetes_name": "worker",
+          "kubernetes_namespace": "default",
+          "pipelineName": "evalwait",
+          "quantile": "0.5",
+          "status": "succeed"
+        },
+        "values": [
+          [
+            1531141707.901,
+            "10248"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "algorithm_runtime_summary",
+          "algorithmName": "eval-alg",
+          "app": "worker",
+          "core": "true",
+          "group": "distributedkube",
+          "instance": "10.233.73.68:3001",
+          "job": "kubernetes-service-endpoints",
+          "kubernetes_name": "worker",
+          "kubernetes_namespace": "default",
+          "pipelineName": "evalwait",
+          "quantile": "0.5",
+          "status": "succeed"
+        },
+        "values": [
+          [
+            1531141707.901,
+            "10137"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "algorithm_runtime_summary",
+          "algorithmName": "eval-alg",
+          "app": "worker",
+          "core": "true",
+          "group": "distributedkube",
+          "instance": "10.233.73.68:3001",
+          "job": "kubernetes-service-endpoints",
+          "kubernetes_name": "worker",
+          "kubernetes_namespace": "default",
+          "pipelineName": "evalwait",
+          "quantile": "0.5",
+          "status": "undefined"
+        },
+        "values": [
+          [
+            1531141707.901,
+            "137.5"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "algorithm_runtime_summary",
+          "algorithmName": "eval-alg",
+          "app": "worker",
+          "core": "true",
+          "group": "distributedkube",
+          "instance": "10.233.73.75:3001",
+          "job": "kubernetes-service-endpoints",
+          "kubernetes_name": "worker",
+          "kubernetes_namespace": "default",
+          "pipelineName": "evalwait",
+          "quantile": "0.5",
+          "status": "succeed"
+        },
+        "values": [
+          [
+            1531142052.901,
+            "10336"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "algorithm_runtime_summary",
+          "algorithmName": "eval-alg",
+          "app": "worker",
+          "core": "true",
+          "group": "distributedkube",
+          "instance": "10.233.73.79:3001",
+          "job": "kubernetes-service-endpoints",
+          "kubernetes_name": "worker",
+          "kubernetes_namespace": "default",
+          "pipelineName": "evalwait",
+          "quantile": "0.5",
+          "status": "succeed"
+        },
+        "values": [
+          [
+            1531142052.901,
+            "10354"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "algorithm_runtime_summary",
+          "algorithmName": "eval-alg",
+          "app": "worker",
+          "core": "true",
+          "group": "distributedkube",
+          "instance": "10.233.73.80:3001",
+          "job": "kubernetes-service-endpoints",
+          "kubernetes_name": "worker",
+          "kubernetes_namespace": "default",
+          "pipelineName": "evalwait",
+          "quantile": "0.5",
+          "status": "succeed"
+        },
+        "values": [
+          [
+            1531142052.901,
+            "10335"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "algorithm_runtime_summary",
+          "algorithmName": "eval-alg",
+          "app": "worker",
+          "core": "true",
+          "group": "distributedkube",
+          "instance": "10.233.74.177:3001",
+          "job": "kubernetes-service-endpoints",
+          "kubernetes_name": "worker",
+          "kubernetes_namespace": "default",
+          "pipelineName": "evalwait",
+          "quantile": "0.5",
+          "status": "succeed"
+        },
+        "values": [
+          [
+            1531141707.901,
+            "10265"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "algorithm_runtime_summary",
+          "algorithmName": "eval-alg",
+          "app": "worker",
+          "core": "true",
+          "group": "distributedkube",
+          "instance": "10.233.74.178:3001",
+          "job": "kubernetes-service-endpoints",
+          "kubernetes_name": "worker",
+          "kubernetes_namespace": "default",
+          "pipelineName": "evalwait",
+          "quantile": "0.5",
+          "status": "succeed"
+        },
+        "values": [
+          [
+            1531141707.901,
+            "10227"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "algorithm_runtime_summary",
+          "algorithmName": "eval-alg",
+          "app": "worker",
+          "core": "true",
+          "group": "distributedkube",
+          "instance": "10.233.74.178:3001",
+          "job": "kubernetes-service-endpoints",
+          "kubernetes_name": "worker",
+          "kubernetes_namespace": "default",
+          "pipelineName": "evalwait",
+          "quantile": "0.5",
+          "status": "undefined"
+        },
+        "values": [
+          [
+            1531141707.901,
+            "122"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "algorithm_runtime_summary",
+          "algorithmName": "eval-alg",
+          "app": "worker",
+          "core": "true",
+          "group": "distributedkube",
+          "instance": "10.233.74.179:3001",
+          "job": "kubernetes-service-endpoints",
+          "kubernetes_name": "worker",
+          "kubernetes_namespace": "default",
+          "pipelineName": "evalwait",
+          "quantile": "0.5",
+          "status": "succeed"
+        },
+        "values": [
+          [
+            1531141707.901,
+            "10135"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "algorithm_runtime_summary",
+          "algorithmName": "eval-alg",
+          "app": "worker",
+          "core": "true",
+          "group": "distributedkube",
+          "instance": "10.233.74.184:3001",
+          "job": "kubernetes-service-endpoints",
+          "kubernetes_name": "worker",
+          "kubernetes_namespace": "default",
+          "pipelineName": "evalwait",
+          "quantile": "0.5",
+          "status": "succeed"
+        },
+        "values": [
+          [
+            1531142052.901,
+            "10345.5"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "algorithm_runtime_summary",
+          "algorithmName": "eval-alg2",
+          "app": "worker",
+          "core": "true",
+          "group": "distributedkube",
+          "instance": "10.233.65.92:3001",
+          "job": "kubernetes-service-endpoints",
+          "kubernetes_name": "worker",
+          "kubernetes_namespace": "default",
+          "pipelineName": "evalwait2",
+          "quantile": "0.5",
+          "status": "succeed"
+        },
+        "values": [
+          [
+            1531142397.901,
+            "10102"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "algorithm_runtime_summary",
+          "algorithmName": "eval-alg2",
+          "app": "worker",
+          "core": "true",
+          "group": "distributedkube",
+          "instance": "10.233.65.94:3001",
+          "job": "kubernetes-service-endpoints",
+          "kubernetes_name": "worker",
+          "kubernetes_namespace": "default",
+          "pipelineName": "evalwait2",
+          "quantile": "0.5",
+          "status": "succeed"
+        },
+        "values": [
+          [
+            1531142397.901,
+            "10109"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "algorithm_runtime_summary",
+          "algorithmName": "eval-alg2",
+          "app": "worker",
+          "core": "true",
+          "group": "distributedkube",
+          "instance": "10.233.65.96:3001",
+          "job": "kubernetes-service-endpoints",
+          "kubernetes_name": "worker",
+          "kubernetes_namespace": "default",
+          "pipelineName": "evalwait2",
+          "quantile": "0.5",
+          "status": "succeed"
+        },
+        "values": [
+          [
+            1531142397.901,
+            "10124"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "algorithm_runtime_summary",
+          "algorithmName": "eval-alg2",
+          "app": "worker",
+          "core": "true",
+          "group": "distributedkube",
+          "instance": "10.233.66.79:3001",
+          "job": "kubernetes-service-endpoints",
+          "kubernetes_name": "worker",
+          "kubernetes_namespace": "default",
+          "pipelineName": "evalwait2",
+          "quantile": "0.5",
+          "status": "succeed"
+        },
+        "values": [
+          [
+            1531142397.901,
+            "10137"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "algorithm_runtime_summary",
+          "algorithmName": "eval-alg2",
+          "app": "worker",
+          "core": "true",
+          "group": "distributedkube",
+          "instance": "10.233.66.80:3001",
+          "job": "kubernetes-service-endpoints",
+          "kubernetes_name": "worker",
+          "kubernetes_namespace": "default",
+          "pipelineName": "evalwait2",
+          "quantile": "0.5",
+          "status": "succeed"
+        },
+        "values": [
+          [
+            1531142397.901,
+            "10151.5"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "algorithm_runtime_summary",
+          "algorithmName": "eval-alg2",
+          "app": "worker",
+          "core": "true",
+          "group": "distributedkube",
+          "instance": "10.233.67.42:3001",
+          "job": "kubernetes-service-endpoints",
+          "kubernetes_name": "worker",
+          "kubernetes_namespace": "default",
+          "pipelineName": "evalwait2",
+          "quantile": "0.5",
+          "status": "succeed"
+        },
+        "values": [
+          [
+            1531142397.901,
+            "10124"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "algorithm_runtime_summary",
+          "algorithmName": "eval-alg2",
+          "app": "worker",
+          "core": "true",
+          "group": "distributedkube",
+          "instance": "10.233.68.219:3001",
+          "job": "kubernetes-service-endpoints",
+          "kubernetes_name": "worker",
+          "kubernetes_namespace": "default",
+          "pipelineName": "evalwait2",
+          "quantile": "0.5",
+          "status": "succeed"
+        },
+        "values": [
+          [
+            1531142397.901,
+            "10110"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "algorithm_runtime_summary",
+          "algorithmName": "eval-alg2",
+          "app": "worker",
+          "core": "true",
+          "group": "distributedkube",
+          "instance": "10.233.68.224:3001",
+          "job": "kubernetes-service-endpoints",
+          "kubernetes_name": "worker",
+          "kubernetes_namespace": "default",
+          "pipelineName": "evalwait2",
+          "quantile": "0.5",
+          "status": "succeed"
+        },
+        "values": [
+          [
+            1531142397.901,
+            "10166"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "algorithm_runtime_summary",
+          "algorithmName": "eval-alg2",
+          "app": "worker",
+          "core": "true",
+          "group": "distributedkube",
+          "instance": "10.233.68.225:3001",
+          "job": "kubernetes-service-endpoints",
+          "kubernetes_name": "worker",
+          "kubernetes_namespace": "default",
+          "pipelineName": "evalwait2",
+          "quantile": "0.5",
+          "status": "succeed"
+        },
+        "values": [
+          [
+            1531142397.901,
+            "10097"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "algorithm_runtime_summary",
+          "algorithmName": "eval-alg2",
+          "app": "worker",
+          "core": "true",
+          "group": "distributedkube",
+          "instance": "10.233.69.134:3001",
+          "job": "kubernetes-service-endpoints",
+          "kubernetes_name": "worker",
+          "kubernetes_namespace": "default",
+          "pipelineName": "evalwait2",
+          "quantile": "0.5",
+          "status": "succeed"
+        },
+        "values": [
+          [
+            1531142397.901,
+            "10103.666666666666"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "algorithm_runtime_summary",
+          "algorithmName": "eval-alg2",
+          "app": "worker",
+          "core": "true",
+          "group": "distributedkube",
+          "instance": "10.233.69.135:3001",
+          "job": "kubernetes-service-endpoints",
+          "kubernetes_name": "worker",
+          "kubernetes_namespace": "default",
+          "pipelineName": "evalwait2",
+          "quantile": "0.5",
+          "status": "succeed"
+        },
+        "values": [
+          [
+            1531142397.901,
+            "10142"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "algorithm_runtime_summary",
+          "algorithmName": "eval-alg2",
+          "app": "worker",
+          "core": "true",
+          "group": "distributedkube",
+          "instance": "10.233.69.136:3001",
+          "job": "kubernetes-service-endpoints",
+          "kubernetes_name": "worker",
+          "kubernetes_namespace": "default",
+          "pipelineName": "evalwait2",
+          "quantile": "0.5",
+          "status": "succeed"
+        },
+        "values": [
+          [
+            1531142397.901,
+            "10119.666666666666"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "algorithm_runtime_summary",
+          "algorithmName": "eval-alg2",
+          "app": "worker",
+          "core": "true",
+          "group": "distributedkube",
+          "instance": "10.233.69.140:3001",
+          "job": "kubernetes-service-endpoints",
+          "kubernetes_name": "worker",
+          "kubernetes_namespace": "default",
+          "pipelineName": "evalwait2",
+          "quantile": "0.5",
+          "status": "succeed"
+        },
+        "values": [
+          [
+            1531142397.901,
+            "10134"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "algorithm_runtime_summary",
+          "algorithmName": "eval-alg2",
+          "app": "worker",
+          "core": "true",
+          "group": "distributedkube",
+          "instance": "10.233.70.189:3001",
+          "job": "kubernetes-service-endpoints",
+          "kubernetes_name": "worker",
+          "kubernetes_namespace": "default",
+          "pipelineName": "evalwait2",
+          "quantile": "0.5",
+          "status": "succeed"
+        },
+        "values": [
+          [
+            1531142397.901,
+            "10119"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "algorithm_runtime_summary",
+          "algorithmName": "eval-alg2",
+          "app": "worker",
+          "core": "true",
+          "group": "distributedkube",
+          "instance": "10.233.70.191:3001",
+          "job": "kubernetes-service-endpoints",
+          "kubernetes_name": "worker",
+          "kubernetes_namespace": "default",
+          "pipelineName": "evalwait2",
+          "quantile": "0.5",
+          "status": "succeed"
+        },
+        "values": [
+          [
+            1531142397.901,
+            "10120.5"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "algorithm_runtime_summary",
+          "algorithmName": "eval-alg2",
+          "app": "worker",
+          "core": "true",
+          "group": "distributedkube",
+          "instance": "10.233.70.192:3001",
+          "job": "kubernetes-service-endpoints",
+          "kubernetes_name": "worker",
+          "kubernetes_namespace": "default",
+          "pipelineName": "evalwait2",
+          "quantile": "0.5",
+          "status": "succeed"
+        },
+        "values": [
+          [
+            1531142397.901,
+            "10121"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "algorithm_runtime_summary",
+          "algorithmName": "eval-alg2",
+          "app": "worker",
+          "core": "true",
+          "group": "distributedkube",
+          "instance": "10.233.73.83:3001",
+          "job": "kubernetes-service-endpoints",
+          "kubernetes_name": "worker",
+          "kubernetes_namespace": "default",
+          "pipelineName": "evalwait2",
+          "quantile": "0.5",
+          "status": "succeed"
+        },
+        "values": [
+          [
+            1531142397.901,
+            "10112"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "algorithm_runtime_summary",
+          "algorithmName": "eval-alg2",
+          "app": "worker",
+          "core": "true",
+          "group": "distributedkube",
+          "instance": "10.233.73.84:3001",
+          "job": "kubernetes-service-endpoints",
+          "kubernetes_name": "worker",
+          "kubernetes_namespace": "default",
+          "pipelineName": "evalwait2",
+          "quantile": "0.5",
+          "status": "succeed"
+        },
+        "values": [
+          [
+            1531142397.901,
+            "10141.333333333334"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "algorithm_runtime_summary",
+          "algorithmName": "eval-alg2",
+          "app": "worker",
+          "core": "true",
+          "group": "distributedkube",
+          "instance": "10.233.74.187:3001",
+          "job": "kubernetes-service-endpoints",
+          "kubernetes_name": "worker",
+          "kubernetes_namespace": "default",
+          "pipelineName": "evalwait2",
+          "quantile": "0.5",
+          "status": "succeed"
+        },
+        "values": [
+          [
+            1531142397.901,
+            "10110"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "algorithm_runtime_summary",
+          "algorithmName": "green-alg",
+          "app": "worker",
+          "core": "true",
+          "group": "distributedkube",
+          "instance": "10.233.73.212:3001",
+          "job": "kubernetes-service-endpoints",
+          "kubernetes_name": "worker",
+          "kubernetes_namespace": "default",
+          "pipelineName": "simple",
+          "quantile": "0.5",
+          "status": "succeed"
+        },
+        "values": [
+          [
+            1531223472.901,
+            "1117"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "algorithm_runtime_summary",
+          "algorithmName": "green-alg",
+          "app": "worker",
+          "core": "true",
+          "group": "distributedkube",
+          "instance": "10.233.73.61:3001",
+          "job": "kubernetes-service-endpoints",
+          "kubernetes_name": "worker",
+          "kubernetes_namespace": "default",
+          "pipelineName": "simple",
+          "quantile": "0.5",
+          "status": "succeed"
+        },
+        "values": [
+          [
+            1531140672.901,
+            "1312"
+          ],
+          [
+            1531141017.901,
+            "1312"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "algorithm_runtime_summary",
+          "algorithmName": "yellow-alg",
+          "app": "worker",
+          "core": "true",
+          "group": "distributedkube",
+          "instance": "10.233.69.118:3001",
+          "job": "kubernetes-service-endpoints",
+          "kubernetes_name": "worker",
+          "kubernetes_namespace": "default",
+          "pipelineName": "simple",
+          "quantile": "0.5",
+          "status": "succeed"
+        },
+        "values": [
+          [
+            1531140672.901,
+            "1158"
+          ],
+          [
+            1531141017.901,
+            "1158"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "algorithm_runtime_summary",
+          "algorithmName": "yellow-alg",
+          "app": "worker",
+          "core": "true",
+          "group": "distributedkube",
+          "instance": "10.233.69.236:3001",
+          "job": "kubernetes-service-endpoints",
+          "kubernetes_name": "worker",
+          "kubernetes_namespace": "default",
+          "pipelineName": "simple",
+          "quantile": "0.5",
+          "status": "succeed"
+        },
+        "values": [
+          [
+            1531223472.901,
+            "1149"
+          ]
+        ]
+      }
+    ]
+  }
+}

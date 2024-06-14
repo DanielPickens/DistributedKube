@@ -1,0 +1,413 @@
+const algoMetricsDir = '/var/metrics';
+const workerTemplate = {
+    apiVersion: 'batch/v1',
+    kind: 'Job',
+    metadata: {
+        name: 'job-name',
+        labels: {
+            type: 'worker',
+            group: 'distributedkube',
+            core: 'true',
+            'algorithm-name': 'algorithm-name',
+            'metrics-group': 'workers'
+        }
+    },
+    spec: {
+        template: {
+            metadata: {
+                labels: {
+                    group: 'distributedkube',
+                    type: 'worker',
+                    'algorithm-name': 'algorithm-name',
+                    'metrics-group': 'workers'
+                }
+            },
+            spec: {
+                serviceAccountName: 'worker-serviceaccount',
+                containers: [
+                    {
+                        name: 'worker',
+                        image: 'distributedkube/worker:latest',
+                        env: [
+                            {
+                                name: 'NODE_ENV',
+                                value: 'production'
+                            },
+                            {
+                                name: 'ALGORITHM_TYPE',
+                                value: 'algorithm-name'
+                            },
+                            {
+                                name: 'METRICS_PORT',
+                                value: '3001'
+                            },
+                            {
+                                name: 'INACTIVE_PAUSED_WORKER_TIMEOUT_MS',
+                                value: '10000'
+                            },
+                            {
+                                name: 'ALGO_METRICS_DIR',
+                                value: `${algoMetricsDir}`
+                            },
+                            {
+                                name: 'POD_ID',
+                                valueFrom: {
+                                    fieldRef: {
+                                        fieldPath: 'metadata.uid'
+                                    }
+                                }
+                            },
+                            {
+                                name: 'POD_IP',
+                                valueFrom: {
+                                    fieldRef: {
+                                        fieldPath: 'status.podIP'
+                                    }
+                                }
+                            },
+                            {
+                                name: 'POD_NAME',
+                                valueFrom: {
+                                    fieldRef: {
+                                        fieldPath: 'metadata.name'
+                                    }
+                                }
+                            },
+                            {
+                                name: 'NAMESPACE',
+                                valueFrom: {
+                                    fieldRef: {
+                                        fieldPath: 'metadata.namespace'
+                                    }
+                                }
+                            },
+                            {
+                                name: 'DEFAULT_STORAGE',
+                                valueFrom: {
+                                    configMapKeyRef: {
+                                        name: 'task-executor-configmap',
+                                        key: 'DEFAULT_STORAGE'
+                                    }
+                                }
+                            },
+                            {
+                                name: 'ALGORITHM_DISCONNECTED_TIMEOUT_MS',
+                                valueFrom: {
+                                    configMapKeyRef: {
+                                        name: 'task-executor-configmap',
+                                        key: 'ALGORITHM_DISCONNECTED_TIMEOUT_MS'
+                                    }
+                                }
+                            },
+                            {
+                                name: 'STORAGE_ENCODING',
+                                valueFrom: {
+                                    configMapKeyRef: {
+                                        name: 'task-executor-configmap',
+                                        key: 'STORAGE_ENCODING'
+                                    }
+                                }
+                            },
+                            {
+                                name: 'DISCOVERY_ENCODING',
+                                valueFrom: {
+                                    configMapKeyRef: {
+                                        name: 'task-executor-configmap',
+                                        key: 'DISCOVERY_ENCODING'
+                                    }
+                                }
+                            },
+                            {
+                                name: 'DISCOVERY_PORT',
+                                valueFrom: {
+                                    configMapKeyRef: {
+                                        name: 'task-executor-configmap',
+                                        key: 'DISCOVERY_PORT'
+                                    }
+                                }
+                            },
+                            {
+                                name: 'DISCOVERY_TIMEOUT',
+                                valueFrom: {
+                                    configMapKeyRef: {
+                                        name: 'task-executor-configmap',
+                                        key: 'DISCOVERY_TIMEOUT'
+                                    }
+                                }
+                            },
+                            {
+                                name: 'DISCOVERY_MAX_CACHE_SIZE',
+                                valueFrom: {
+                                    configMapKeyRef: {
+                                        name: 'task-executor-configmap',
+                                        key: 'DISCOVERY_MAX_CACHE_SIZE'
+                                    }
+                                }
+                            },
+                            {
+                                name: 'STORAGE_MAX_CACHE_SIZE',
+                                valueFrom: {
+                                    configMapKeyRef: {
+                                        name: 'task-executor-configmap',
+                                        key: 'STORAGE_MAX_CACHE_SIZE'
+                                    }
+                                }
+                            },
+                            {
+                                name: 'WORKER_ALGORITHM_ENCODING',
+                                valueFrom: {
+                                    configMapKeyRef: {
+                                        name: 'task-executor-configmap',
+                                        key: 'WORKER_ALGORITHM_ENCODING'
+                                    }
+                                }
+                            },
+                            {
+                                name: 'DISCOVERY_SERVING_REPORT_INTERVAL',
+                                valueFrom: {
+                                    configMapKeyRef: {
+                                        name: 'task-executor-configmap',
+                                        key: 'DISCOVERY_SERVING_REPORT_INTERVAL'
+                                    }
+                                }
+                            },
+                            {
+                                name: 'CLUSTER_NAME',
+                                valueFrom: {
+                                    configMapKeyRef: {
+                                        name: 'task-executor-configmap',
+                                        key: 'CLUSTER_NAME'
+                                    }
+                                }
+                            },
+                            {
+                                name: 'WORKER_SOCKET_MAX_PAYLOAD_BYTES',
+                                valueFrom: {
+                                    configMapKeyRef: {
+                                        name: 'task-executor-configmap',
+                                        key: 'WORKER_SOCKET_MAX_PAYLOAD_BYTES'
+                                    }
+                                }
+                            },
+                            {
+                                name: 'MONGODB_SERVICE_USER_NAME',
+                                valueFrom: {
+                                    secretKeyRef: {
+                                        name: 'mongodb-secret',
+                                        key: 'mongodb-username'
+                                    }
+                                }
+                            },
+                            {
+                                name: 'MONGODB_SERVICE_PASSWORD',
+                                valueFrom: {
+                                    secretKeyRef: {
+                                        name: 'mongodb-secret',
+                                        key: 'mongodb-password'
+                                    }
+                                }
+                            },
+                            {
+                                name: 'MONGODB_DB_NAME',
+                                valueFrom: {
+                                    secretKeyRef: {
+                                        name: 'mongodb-secret',
+                                        key: 'mongodb-database'
+                                    }
+                                }
+                            },
+                            {
+                                name: 'BASE_DATASOURCES_DIRECTORY',
+                                value: '/distributedkube/datasources-storage'
+                            },
+
+                        ],
+                    },
+                    {
+                        name: 'algorunner',
+                        image: 'distributedkube/algorunner:latest',
+                        env: [
+                            {
+                                name: 'ALGO_METRICS_DIR',
+                                value: `${algoMetricsDir}`
+                            },
+                            {
+                                name: 'POD_IP',
+                                valueFrom: {
+                                    fieldRef: {
+                                        fieldPath: 'status.podIP'
+                                    }
+                                }
+                            },
+                            {
+                                name: 'DEFAULT_STORAGE',
+                                valueFrom: {
+                                    configMapKeyRef: {
+                                        name: 'task-executor-configmap',
+                                        key: 'DEFAULT_STORAGE'
+                                    }
+                                }
+                            },
+                            {
+                                name: 'STORAGE_ENCODING',
+                                valueFrom: {
+                                    configMapKeyRef: {
+                                        name: 'task-executor-configmap',
+                                        key: 'STORAGE_ENCODING'
+                                    }
+                                }
+                            },
+                            {
+                                name: 'DISCOVERY_ENCODING',
+                                valueFrom: {
+                                    configMapKeyRef: {
+                                        name: 'task-executor-configmap',
+                                        key: 'DISCOVERY_ENCODING'
+                                    }
+                                }
+                            },
+                            {
+                                name: 'DISCOVERY_PORT',
+                                valueFrom: {
+                                    configMapKeyRef: {
+                                        name: 'task-executor-configmap',
+                                        key: 'DISCOVERY_PORT'
+                                    }
+                                }
+                            },
+                            {
+                                name: 'DISCOVERY_TIMEOUT',
+                                valueFrom: {
+                                    configMapKeyRef: {
+                                        name: 'task-executor-configmap',
+                                        key: 'DISCOVERY_TIMEOUT'
+                                    }
+                                }
+                            },
+                            {
+                                name: 'DISCOVERY_MAX_CACHE_SIZE',
+                                valueFrom: {
+                                    configMapKeyRef: {
+                                        name: 'task-executor-configmap',
+                                        key: 'DISCOVERY_MAX_CACHE_SIZE'
+                                    }
+                                }
+                            },
+                            {
+                                name: 'STORAGE_MAX_CACHE_SIZE',
+                                valueFrom: {
+                                    configMapKeyRef: {
+                                        name: 'task-executor-configmap',
+                                        key: 'STORAGE_MAX_CACHE_SIZE'
+                                    }
+                                }
+                            },
+                            {
+                                name: 'WORKER_ALGORITHM_ENCODING',
+                                valueFrom: {
+                                    configMapKeyRef: {
+                                        name: 'task-executor-configmap',
+                                        key: 'WORKER_ALGORITHM_ENCODING'
+                                    }
+                                }
+                            },
+                            {
+                                name: 'DISCOVERY_SERVING_REPORT_INTERVAL',
+                                valueFrom: {
+                                    configMapKeyRef: {
+                                        name: 'task-executor-configmap',
+                                        key: 'DISCOVERY_SERVING_REPORT_INTERVAL'
+                                    }
+                                }
+                            },
+                            {
+                                name: 'CLUSTER_NAME',
+                                valueFrom: {
+                                    configMapKeyRef: {
+                                        name: 'task-executor-configmap',
+                                        key: 'CLUSTER_NAME'
+                                    }
+                                }
+                            },
+                        ]
+                    }
+                ],
+                restartPolicy: 'Never'
+            }
+        },
+        backoffLimit: 0
+    }
+};
+
+const gatewayEnv = {
+    NODE_ENV: 'production',
+    BASE_URL_PATH: {
+        configMapKeyRef: {
+            name: 'algorithm-gateway-configmap',
+            key: 'BASE_URL_PATH'
+        }
+    },
+    INGRESS_PREFIX: {
+        configMapKeyRef: {
+            name: 'algorithm-gateway-configmap',
+            key: 'INGRESS_PREFIX'
+        }
+    },
+    REST_PORT: {
+        configMapKeyRef: {
+            name: 'algorithm-gateway-configmap',
+            key: 'REST_PORT'
+        }
+    }
+};
+const hyperparamsTunerEnv = {
+    SHARED_METRICS: '/distributedkube/datasciencemetrics-storage'
+};
+
+const varLog = {
+    name: 'varlog',
+    hostPath: {
+        path: '/var/log'
+    }
+};
+const varlibdockercontainers = {
+    name: 'varlibdockercontainers',
+    hostPath: {
+        path: '/var/lib/docker/containers'
+    }
+};
+
+const algoMetricVolume = {
+    name: 'algometrics',
+    emptyDir: {}
+};
+
+const sharedVolumeMounts = [
+    {
+        name: 'algometrics',
+        mountPath: `${algoMetricsDir}`
+    }
+];
+const sharedMetricsVolumeMount = { name: 'dsmetrics', mountPath: '/var/ds-metrics' };
+
+const varlogMount = {
+    name: 'varlog',
+    mountPath: '/var/log'
+};
+const varlibdockercontainersMount = {
+    name: 'varlibdockercontainers',
+    mountPath: '/var/lib/docker/containers',
+    readOnly: true
+};
+module.exports = {
+    workerTemplate,
+    varlogMount,
+    varlibdockercontainersMount,
+    varLog,
+    varlibdockercontainers,
+    sharedVolumeMounts,
+    sharedMetricsVolumeMount,
+    algoMetricVolume,
+    gatewayEnv,
+    hyperparamsTunerEnv
+};

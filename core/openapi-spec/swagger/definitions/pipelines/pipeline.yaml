@@ -1,0 +1,61 @@
+type: object
+properties:
+  name:
+    $ref: "#/components/schemas/pipelineName"
+  kind:
+    $ref: "#/components/schemas/pipelineKind"
+  experimentName:
+    $ref: "#/components/schemas/experimentName"
+  description:
+    type: string
+    description: pipeline description
+  nodes:
+    type: array
+    description: Array of nodes
+    items:
+      $ref: "#/components/schemas/pipelineNode"
+  flowInput:
+    type: object
+    nullable: true
+    description: input object
+  webhooks:
+    $ref: "#/components/schemas/webhooks"
+  options:
+    $ref: "#/components/schemas/options"
+    default: {}
+  priority:
+    $ref: "#/components/schemas/priority"
+    default: 3
+  triggers:
+    $ref: "#/components/schemas/triggers"
+  tags:
+    type: array
+    description: Array of tags
+    items:
+      $ref: "#/components/schemas/tag"
+  rootJobId:
+    type: string
+    description: the root job id of the current tree
+  streaming:
+    type: object
+    description: streaming options
+    properties:
+      defaultFlow:
+        type: string
+        description: the name of the default stream flow
+      flows:
+        type: object
+        description: |
+          define streaming flows in simple syntax
+          example: node A stream to B and C, node B stream to D.
+          it will be: A >> B&C | B >> D
+        example:
+          main: A >> B&C | B >> D | C >> E
+          second: A >> B >> C
+  edges:
+    type: array
+    description: edges define relation between nodes
+    items: {}
+    example: [{ source: A, target: B }]
+required:
+  - name

@@ -1,0 +1,74 @@
+get:
+  tags:
+    - Experiment
+  summary: get experiment details
+  description: get experiment details
+  parameters:
+    - name: name
+      in: path
+      description: experiment name to get from the store
+      required: true
+      schema:
+        type: string
+  responses:
+    "200":
+      description: action summary
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/experiment"
+    "400":
+      description: bad request
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/error"
+    "404":
+      description: pipeline Not Found
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/error"
+    default:
+      description: Unexpected error
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/error"
+delete:
+  tags:
+    - Experiment
+  summary: Delete experiment
+  description: Delete existing experiment from store
+  parameters:
+    - name: name
+      in: path
+      description: experiment name to get from the store
+      required: true
+      schema:
+        type: string
+  responses:
+    "200":
+      description: action summary
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/defaultResponseWithName"
+    "400":
+      description: bad request
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/error"
+    "404":
+      description: experiment Not Found
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/error"
+    default:
+      description: Unexpected error
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/error"

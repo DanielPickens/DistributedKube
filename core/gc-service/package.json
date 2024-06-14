@@ -1,0 +1,56 @@
+{
+  "name": "gc-service",
+  "version": "2.8.2",
+  "description": "distributedkube garbage collector",
+  "main": "app.js",
+  "scripts": {
+    "lint": "./node_modules/eslint/bin/eslint.js .",
+    "test": "NODE_ENV=test ./node_modules/mocha/bin/_mocha tests --timeout=20000 --colors --recursive --exit",
+    "test:cov": "NODE_ENV=test ./node_modules/nyc/bin/nyc.js --reporter=html --reporter=text --reporter=lcov npm run test",
+    "start": "node app",
+    "build": "./dockerfile/build.sh gc-service"
+  },
+  "nyc": {
+    "exclude": [
+      "tests",
+      "bootstrap.js",
+      "lib/utils/kubernetes.js"
+    ]
+  },
+  "author": "distributedkube",
+  "license": "MIT",
+  "dependencies": {
+    "@distributedkube/config": "^2.0.11",
+    "@distributedkube/consts": "^1.0.39",
+    "@distributedkube/db": "^2.0.14",
+    "@distributedkube/etcd": "^5.1.6",
+    "@distributedkube/healthchecks": "^1.0.2",
+    "@distributedkube/kubernetes-client": "^1.0.35",
+    "@distributedkube/logger": "^2.0.2",
+    "@distributedkube/redis-utils": "^1.0.3",
+    "@distributedkube/rest-server": "^1.0.18",
+    "@distributedkube/storage-manager": "^2.1.1",
+    "cron": "^1.8.2",
+    "cronstrue": "^1.114.0",
+    "fs-extra": "^10.0.0",
+    "glob": "^7.1.7",
+    "moment": "^2.29.1",
+    "requestretry": "^5.0.0"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-as-promised": "^7.1.1",
+    "coveralls": "^3.1.0",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-plugin-chai-friendly": "^0.6.0",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-security": "^1.4.0",
+    "mocha": "^7.1.1",
+    "mockery": "^2.1.0",
+    "nock": "^13.1.0",
+    "nyc": "^15.1.0",
+    "sinon": "^11.1.1",
+    "uuid": "^3.3.3"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "name": "resource-manager",
+  "version": "2.8.1",
+  "description": "resource-manager",
+  "main": "app.js",
+  "directories": {
+    "lib": "lib",
+    "tests": "tests"
+  },
+  "dependencies": {
+    "@distributedkube/config": "^2.0.11",
+    "@distributedkube/db": "^1.0.32",
+    "@distributedkube/etcd": "^5.1.2",
+    "@distributedkube/healthchecks": "^1.0.2",
+    "@distributedkube/kubernetes-client": "^1.0.33",
+    "@distributedkube/logger": "^2.0.2",
+    "@distributedkube/metrics": "^1.0.42",
+    "@distributedkube/prometheus-client": "^1.0.0",
+    "@distributedkube/units-converter": "^1.0.17",
+    "lodash.groupby": "^4.6.0",
+    "lodash.orderby": "^4.6.0",
+    "median": "0.0.2"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-as-promised": "^7.1.1",
+    "coveralls": "^3.0.11",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-plugin-chai-friendly": "^0.5.0",
+    "eslint-plugin-import": "^2.20.2",
+    "mocha": "^7.1.1",
+    "mockery": "^2.1.0",
+    "nyc": "^15.0.1",
+    "sinon": "^9.0.1"
+  },
+  "scripts": {
+    "lint": "./node_modules/eslint/bin/eslint.js .",
+    "test": "NODE_ENV=test ./node_modules/mocha/bin/_mocha tests --colors --recursive --exit",
+    "test:cov": "NODE_ENV=test ./node_modules/nyc/bin/nyc.js --reporter=html --reporter=text --reporter=lcov mocha tests --colors --recursive --exit",
+    "coveralls": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
+    "start": "node app",
+    "build": "./dockerfile/build.sh resource-manager"
+  },
+  "author": "distributedkube",
+  "license": "MIT"
+}

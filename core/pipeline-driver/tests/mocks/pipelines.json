@@ -1,0 +1,442 @@
+[
+    {
+        "name": "simple-flow",
+        "nodes": [
+            {
+                "nodeName": "green",
+                "algorithmName": "green-alg",
+                "input": [
+                    "@flowInput.files.link"
+                ]
+            },
+            {
+                "nodeName": "yellow",
+                "algorithmName": "yellow-alg",
+                "input": [
+                    "@green"
+                ]
+            },
+            {
+                "nodeName": "black",
+                "algorithmName": "black-alg",
+                "input": [
+                    "@yellow"
+                ]
+            },
+            {
+                "nodeName": "white",
+                "algorithmName": "black-alg",
+                "input": [
+                    "test"
+                ]
+            }
+        ],
+        "flowInputMetadata": {
+            "metadata": {
+                "flowInput": {
+                    "type": "object"
+                },
+                "flowInput.files": {
+                    "type": "object"
+                },
+                "flowInput.files.links": {
+                    "type": "array",
+                    "size": 5
+                }
+            },
+            "storageInfo": {
+                "Key": "green:green-alg:bde23282-4a20-4a13-9d5c-a1e9cd4a696a",
+                "Bucket": "batch-5b0b25a1-5364-4bd6-b9b0-126de5ed2227"
+            }
+        },
+        "options": {
+            "batchTolerance": 30,
+            "progressVerbosityLevel": "debug"
+        }
+    },
+    {
+        "name": "flow2",
+        "nodes": [
+            {
+                "nodeName": "green",
+                "algorithmName": "green-alg",
+                "input": [
+                    "#@flowInput.files.links"
+                ]
+            },
+            {
+                "nodeName": "yellow",
+                "algorithmName": "yellow-alg",
+                "input": [
+                    "@green"
+                ]
+            },
+            {
+                "nodeName": "black",
+                "algorithmName": "black-alg",
+                "input": [
+                    "@green",
+                    "@yellow"
+                ]
+            }
+        ],
+        "flowInputMetadata": {
+            "metadata": {
+                "flowInput": {
+                    "type": "object"
+                },
+                "flowInput.files": {
+                    "type": "object"
+                },
+                "flowInput.files.links": {
+                    "type": "array",
+                    "size": 5
+                }
+            },
+            "storageInfo": {
+                "Key": "green:green-alg:bde23282-4a20-4a13-9d5c-a1e9cd4a696a",
+                "Bucket": "batch-5b0b25a1-5364-4bd6-b9b0-126de5ed2227"
+            }
+        },
+        "options": {
+            "batchTolerance": 30,
+            "progressVerbosityLevel": "debug"
+        }
+    },
+    {
+        "name": "simple-wait-any",
+        "nodes": [
+            {
+                "nodeName": "green",
+                "algorithmName": "green-alg",
+                "input": [
+                    "#@flowInput.files.links"
+                ]
+            },
+            {
+                "nodeName": "yellow",
+                "algorithmName": "yellow-alg",
+                "input": [
+                    "#@flowInput.files.links"
+                ]
+            },
+            {
+                "nodeName": "black",
+                "algorithmName": "black-alg",
+                "input": [
+                    "*@green",
+                    "*@yellow"
+                ]
+            }
+        ],
+        "flowInputMetadata": {
+            "metadata": {
+                "flowInput": {
+                    "type": "object"
+                },
+                "flowInput.files": {
+                    "type": "object"
+                },
+                "flowInput.files.links": {
+                    "type": "array",
+                    "size": 2
+                }
+            },
+            "storageInfo": {
+                "Key": "green:green-alg:bde23282-4a20-4a13-9d5c-a1e9cd4a696a",
+                "Bucket": "batch-5b0b25a1-5364-4bd6-b9b0-126de5ed2227"
+            }
+        },
+        "options": {
+            "batchTolerance": 100,
+            "progressVerbosityLevel": "debug"
+        }
+    },
+    {
+        "name": "batch",
+        "nodes": [
+            {
+                "nodeName": "green",
+                "algorithmName": "green-alg",
+                "input": [
+                    "#@flowInput.files.links"
+                ]
+            },
+            {
+                "nodeName": "yellow",
+                "algorithmName": "yellow-alg",
+                "input": [
+                    "@green"
+                ]
+            }
+        ],
+        "flowInputMetadata": {
+            "metadata": {
+                "flowInput": {
+                    "type": "object"
+                },
+                "flowInput.files": {
+                    "type": "object"
+                },
+                "flowInput.files.links": {
+                    "type": "array",
+                    "size": 5
+                }
+            },
+            "storageInfo": {
+                "Key": "green:green-alg:bde23282-4a20-4a13-9d5c-a1e9cd4a696a",
+                "Bucket": "batch-5b0b25a1-5364-4bd6-b9b0-126de5ed2227"
+            }
+        },
+        "options": {
+            "batchTolerance": 60,
+            "progressVerbosityLevel": "debug"
+        }
+    },
+    {
+        "name": "one-node",
+        "nodes": [
+            {
+                "nodeName": "green",
+                "algorithmName": "green-alg",
+                "input": [
+                    "@flowInput.files.link"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "two-nodes",
+        "nodes": [
+            {
+                "nodeName": "green",
+                "algorithmName": "green-alg",
+                "input": [
+                    "files.link"
+                ]
+            },
+            {
+                "nodeName": "yellow",
+                "algorithmName": "green-alg",
+                "input": [
+                    "files.link"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "randomPipeStored",
+        "nodes": [
+            {
+                "nodeName": "add0",
+                "algorithmName": "eval-alg",
+                "input": [
+                    3,
+                    5
+                ]
+            },
+            {
+                "nodeName": "batch1",
+                "algorithmName": "eval-alg",
+                "input": [
+                    3
+                ]
+            },
+            {
+                "nodeName": "sub12",
+                "algorithmName": "eval-alg",
+                "input": [
+                    3
+                ]
+            },
+            {
+                "nodeName": "add2",
+                "algorithmName": "eval-alg",
+                "input": [
+                    3,
+                    "@add0"
+                ]
+            },
+            {
+                "nodeName": "add3",
+                "algorithmName": "eval-alg",
+                "input": [
+                    3,
+                    "@add0",
+                    "@batch1"
+                ]
+            },
+            {
+                "nodeName": "batch4",
+                "algorithmName": "eval-alg",
+                "input": [
+                    "#[1...5]",
+                    "@add2"
+                ]
+            },
+            {
+                "nodeName": "sub5",
+                "algorithmName": "eval-alg",
+                "input": [
+                    3,
+                    "@add0",
+                    "@batch1"
+                ]
+            },
+            {
+                "nodeName": "add6",
+                "algorithmName": "eval-alg",
+                "input": [
+                    3,
+                    "@add0"
+                ]
+            },
+            {
+                "nodeName": "sub7",
+                "algorithmName": "eval-alg",
+                "input": [
+                    3,
+                    "@add0"
+                ]
+            },
+            {
+                "nodeName": "add8",
+                "algorithmName": "eval-alg",
+                "input": [
+                    3,
+                    "@add0",
+                    "@add2",
+                    "@sub5",
+                    "@add2",
+                    "@add0",
+                    "@sub5",
+                    "@add3"
+                ]
+            },
+            {
+                "nodeName": "add9",
+                "algorithmName": "eval-alg",
+                "input": [
+                    3,
+                    "@add0"
+                ]
+            },
+            {
+                "nodeName": "batch10",
+                "algorithmName": "eval-alg",
+                "input": [
+                    3,
+                    "@add0",
+                    "@add0",
+                    "@add0",
+                    "@add0"
+                ]
+            },
+            {
+                "nodeName": "sub11",
+                "algorithmName": "eval-alg",
+                "input": [
+                    3,
+                    "@add0",
+                    "@add0",
+                    "@add0",
+                    "@batch1"
+                ]
+            },
+            {
+                "nodeName": "mult13",
+                "algorithmName": "eval-alg",
+                "input": [
+                    3,
+                    "@add6",
+                    "@add6",
+                    "@batch4",
+                    "@add6",
+                    "@sub5",
+                    "@add2",
+                    "@add3",
+                    "@add0"
+                ]
+            },
+            {
+                "nodeName": "div14",
+                "algorithmName": "eval-alg",
+                "input": [
+                    3,
+                    "@add2",
+                    "@batch1",
+                    "@batch1",
+                    "@add3"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "stateful-pipeline",
+        "nodes": [
+            {
+                "nodeName": "green",
+                "algorithmName": "green-alg",
+                "input": [
+                    "@flowInput.files.link"
+                ],
+                "stateType": "stateful"
+            },
+            {
+                "nodeName": "yellow",
+                "algorithmName": "yellow-alg",
+                "input": [
+                    "@green"
+                ],
+                "stateType": "stateful"
+            },
+            {
+                "nodeName": "black",
+                "algorithmName": "black-alg",
+                "input": [
+                    "@yellow"
+                ],
+                "stateType": "stateful"
+            },
+            {
+                "nodeName": "white",
+                "algorithmName": "black-alg",
+                "input": [
+                    "test"
+                ],
+                "stateType": "stateful"
+            }
+        ]
+    },
+    {
+        "name": "minStatelessCount-pipeline",
+        "nodes": [
+            {
+                "nodeName": "green",
+                "algorithmName": "green-alg",
+                "input": [
+                    "@flowInput.files.link"
+                ],
+                "stateType": "stateful"
+            },
+            {
+                "nodeName": "yellow",
+                "algorithmName": "yellow-alg",
+                "minStatelessCount": 2,
+                "input": [
+                    "@green"
+                ],
+                "stateType": "stateless"
+            },
+            {
+                "nodeName": "black",
+                "algorithmName": "black-alg",
+                "minStatelessCount": 3,
+                "input": [
+                    "@green"
+                ],
+                "stateType": "stateless"
+            }
+        ]
+    }
+]

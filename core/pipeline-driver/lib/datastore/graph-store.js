@@ -1,0 +1,195 @@
+const clone = require('clone');
+const isEqual = require('lodash.isequal');
+const objectPath = require('object-path');
+const flatten = require('flat');
+const log = require('@distributedkube/logger').GetLogFromContainer();
+const { Persistency } = require('@distributedkube/dag');
+const { taskStatuses } = require('@distributedkube/consts');
+const db = require('../state/db');
+const components = require('../consts/componentNames');
+const INTERVAL = 4000;
+const persistency = new Persistency();
+
+class GraphStore {
+    constructor() {
+        this._interval = null;
+        this._nodesMap = null;
+        this._jobId = null;
+    }
+
+    static async init(options) {
+        return persistency.init({ connection: options.db });
+    }
+
+    async start(jobId, nodeMap) {
+        this._jobId = jobId;
+        this._nodesMap = nodeMap;
+        await this._store();
+        this._storeInterval();
+    }
+
+    async stop() {
+        await this._store();
+        clearInterval(this._interval);
+        this._interval = null;
+        this._nodesMap = null;
+        this._jobId = null;
+    }
+
+    getGraph(options) {
+        return persistency.getGraph({ jobId: options.jobId });
+    }
+
+    _storeInterval() {
+        if (this._interval) {
+            return;
+        }
+        this._interval = setInterval(async () => {
+            if (this._working) {
+                return;
+            }
+            this._working = true;
+            await this._store();
+            this._working = false;
+        }, INTERVAL);
+    }
+
+    async _store() {
+        try {
+            if (this._nodesMap) {
+                const graph = this._nodesMap.getJSONGraph();
+                await this._updateGraph(graph);
+                await db.updatePdIntervalTimestamp(this._jobId);
+            }
+        }
+        catch (error) {
+            log.error(error.message, { component: components.GRAPH_STORE }, error);
+        }
+    }
+
+    async _updateGraph(graph) {
+        const filterGraph = this._filterData(graph);
+        if (!isEqual(this._lastGraph, filterGraph)) {
+            this._lastGraph = filterGraph;
+            await persistency.setGraph({ jobId: this._jobId, data: { jobId: this._jobId, timestamp: Date.now(), ...filterGraph } });
+        }
+    }
+
+    _formatEdge(e) {
+        const edge = {
+            from: e.v,
+            to: e.w,
+            value: e.value
+        };
+        return edge;
+    }
+
+    _filterData(graph) {
+        return {
+            edges: graph.edges.map(e => this._formatEdge(e)),
+            nodes: graph.nodes.map(n => this._formatNode(n.value))
+        };
+    }
+
+    _formatNode(node) {
+        if (node.batch.length === 0) {
+            return this._handleSingle(node);
+        }
+        return this._handleBatch(node);
+    }
+
+    _mapTask(task) {
+        return {
+            taskId: task.taskId,
+            input: this._parseInput(task),
+            output: task.result,
+            podName: task.podName,
+            status: task.status,
+            error: task.error,
+            warnings: task.warnings,
+            retries: task.retries,
+            batchIndex: task.batchIndex,
+            startTime: task.startTime,
+            endTime: task.endTime,
+            metricsPath: task.metricsPath,
+            level: task.level
+        };
+    }
+
+    _handleSingle(n) {
+        const node = {
+            nodeName: n.nodeName,
+            algorithmName: n.algorithmName,
+            algorithmVersion: n.algorithmVersion,
+            ...this._mapTask(n)
+        };
+        return node;
+    }
+
+    _handleBatch(n) {
+        const anyFailedScheduling = n.batch.some(b => b.status === 'FailedScheduling');
+        const node = {
+            nodeName: n.nodeName,
+            algorithmName: n.algorithmName,
+            algorithmVersion: n.algorithmVersion,
+            batch: n.batch.map(b => this._mapTask(b)),
+            batchInfo: this._batchInfo(n.batch),
+            level: n.level,
+            warnings: anyFailedScheduling ? n.warnings : null,
+            error: anyFailedScheduling ? n.error : null,
+            status: anyFailedScheduling ? 'FailedScheduling' : null
+        };
+        return node;
+    }
+
+    _parseInput(node) {
+        if (!node.input) {
+            return null;
+        }
+        const result = clone(node.input);
+        const flatObj = flatten(node.input);
+
+        Object.entries(flatObj).forEach(([k, v]) => {
+            if (typeof v === 'string' && v.startsWith('$$')) {
+                const key = v.substring(2);
+                const storage = node.storage[key];
+                let input;
+                if (Array.isArray(storage)) {
+                    input = { type: 'array', size: storage.flatMap(a => a.tasks).length };
+                }
+                else {
+                    input = storage?.storageInfo;
+                }
+                objectPath.set(result, k, input);
+            }
+        });
+        return result;
+    }
+
+    _batchInfo(batch) {
+        const batchInfo = {
+            idle: 0,
+            completed: 0,
+            errors: 0,
+            running: 0,
+            total: batch.length
+        };
+        batch.forEach((b) => {
+            if (b.error) {
+                batchInfo.errors += 1;
+            }
+            if (b.status === taskStatuses.SUCCEED || b.status === taskStatuses.FAILED) {
+                batchInfo.completed += 1;
+            }
+            else if (b.status === taskStatuses.CREATING || b.status === taskStatuses.PENDING) {
+                batchInfo.idle += 1;
+            }
+            else {
+                batchInfo.running += 1;
+            }
+        });
+        return batchInfo;
+    }
+}
+
+module.exports = GraphStore;

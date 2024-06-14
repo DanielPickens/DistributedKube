@@ -1,0 +1,14 @@
+ARG BASE_PRIVATE_REGISTRY=""
+FROM ${BASE_PRIVATE_REGISTRY}node:18.1.0-buster as install
+ADD ./package-lock.json ./package.json /distributedkube/task-executor/
+WORKDIR /distributedkube/task-executor
+RUN npm ci --production
+
+ARG BASE_PRIVATE_REGISTRY=""
+FROM ${BASE_PRIVATE_REGISTRY}distributedkube/base-node:v2.0.1-buster
+LABEL maintainer="yehiyam@gmail.com"
+RUN mkdir /distributedkube
+COPY . /distributedkube/task-executor
+COPY --from=install /distributedkube/task-executor/node_modules /distributedkube/task-executor/node_modules
+WORKDIR /distributedkube/task-executor
+CMD ["node", "app.js"]

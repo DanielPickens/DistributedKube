@@ -1,0 +1,2 @@
+type: string
+description: Unique identifier representing pipeline execution

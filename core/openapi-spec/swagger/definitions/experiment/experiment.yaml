@@ -1,0 +1,7 @@
+type: object
+properties:
+  name:
+    $ref: "#/components/schemas/experimentName"
+  description:
+    type: string
+    description: describe the experiment

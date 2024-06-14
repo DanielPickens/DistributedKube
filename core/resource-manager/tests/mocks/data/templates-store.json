@@ -1,0 +1,50 @@
+[
+    {
+        "name": "eval-alg",
+        "image": "distributedkube/algorunner",
+        "cpu": 1,
+        "mem": 0
+    },
+    {
+        "name": "green-alg",
+        "image": "distributedkube/algorithm-example",
+        "cpu": 2,
+        "mem": 0
+    },
+    {
+        "name": "yellow-alg",
+        "image": "distributedkube/algorithm-example",
+        "cpu": 3,
+        "mem": 0
+    },
+    {
+        "name": "black-alg",
+        "image": "distributedkube/algorithm-example",
+        "cpu": 4,
+        "mem": 0
+    },
+    {
+        "name": "blue-alg",
+        "image": "distributedkube/algorithm-example",
+        "cpu": 5,
+        "mem": 0
+    },
+    {
+        "name": "orange-alg",
+        "image": "distributedkube/algorithm-example",
+        "cpu": 6,
+        "mem": 0
+    },
+    {
+        "name": "white-alg",
+        "image": "distributedkube/algorithm-example",
+        "cpu": 7,
+        "mem": 0
+    },
+    {
+        "name": "red-alg",
+        "image": "distributedkube/algorithm-example",
+        "cpu": 8,
+        "mem": 0
+    }
+]

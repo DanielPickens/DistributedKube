@@ -1,0 +1,15 @@
+type: object
+properties:
+  jobId:
+    $ref: "#/components/schemas/jobId"
+  nodeName:
+    type: string
+    description: Unique node identifier
+    minLength: 1
+  debug:
+    type: boolean
+    description: Run as debug
+additionalProperties: false
+required:
+  - jobId
+  - nodeName

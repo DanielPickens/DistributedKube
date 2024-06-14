@@ -1,0 +1,18 @@
+get:
+  tags:
+    - Resources
+  summary: Get resource status for all unscheduled algorithms
+  description: Gets missing resources(cpu, memory, gpu) per available node, conditions(nodeSelector), and requests over node capacity
+  responses:
+    "200":
+      description: action summary
+      content:
+        application/json:
+          schema:
+              $ref: "#/components/schemas/resourceResponse"
+    default:
+      description: Unexpected error
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/error"

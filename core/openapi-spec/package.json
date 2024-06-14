@@ -1,0 +1,15 @@
+{
+    "name": "openapi-spec",
+    "version": "2.8.1",
+    "description": "distributedkube openapi-spec",
+    "main": "app.js",
+    "dependencies": {
+        "@distributedkube/rest-server": "^1.0.18"
+    },
+    "scripts": {
+        "build-swagger": "node ./swagger-builder.js && echo ../api-server/api/rest-api ../gc-service/api/rest-api ../datasources-service/api/rest-api ../pipeline-driver-queue/api/rest-api | xargs -n 1 cp swagger.json",
+        "build": "echo No build!"
+    },
+    "author": "distributedkube",
+    "license": "MIT"
+}
